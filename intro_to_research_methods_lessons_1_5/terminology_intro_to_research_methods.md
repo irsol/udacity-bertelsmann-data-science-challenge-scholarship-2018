@@ -20,3 +20,5 @@ defined, variables are created. Examples of Construct: effort, itchiness, hunger
 
 2. Independent Variable sometimes called Experimental Variable or Manipulated Variable, or Predicted, or x-variable.
   - Is a variable that is being manipulated in an experiment in order to observe the effect on a Dependent Variable, sometimes called an Outcome Variable.
+
+3. Lurking Variables or Extraneous factors are variables/factors that can impact the outcome/dependent variable.
