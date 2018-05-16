@@ -28,4 +28,4 @@ All experiments/researches examine some kind of variable(s). A variable is not o
 # Sampling error.
 
 
-![Picture](Users/irynasoltyska/Desktop/error.png)
+![Picture](irynasoltyska/Desktop/sampling_error.png)
