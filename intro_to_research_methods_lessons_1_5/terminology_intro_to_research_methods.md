@@ -24,8 +24,19 @@ All experiments/researches examine some kind of variable(s). A variable is not o
 3. Lurking Variables or Extraneous factors are variables/factors that can impact the Outcome/Dependent Variable.
 
 
+# Sample, population.
 
 # Sampling error.
 
+**Samplig error** the difference between a population parameter and a sample statistic used to estimate it. Sampling error occurs because a portion, and not the entire population, is surveyed.
 
-![sampling_error](sampling_error.png width="100" height="100")
+Sampling error formula:
+- `mu - X-bar` or `X-bar - mu` where `mu` is a population average and `X-bar` is a sample average
+
+![sampling_error](sampling_error.png)
+
+
+
+Links:
+[Samplig error](https://www.britannica.com/science/sampling-error)
+[Estimation of a population](https://www.britannica.com/science/statistics/Estimation-of-a-population-mean#ref367452)
