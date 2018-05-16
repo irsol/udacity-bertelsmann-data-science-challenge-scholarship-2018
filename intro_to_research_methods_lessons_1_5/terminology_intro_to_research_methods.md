@@ -13,7 +13,7 @@ defined, variables are created. Examples of Construct: effort, itchiness, hunger
 **Operational definition** describes how researcher decide to measure the variables (in our case construct) in a study. It also
   helps you to measure constructs in the real world by turning them into measurable variables 
 
-* All experiments/researches examine some kind of variable(s). A variable is not only something that we measure, but also something that we can manipulate and something we can control for.
+All experiments/researches examine some kind of variable(s). A variable is not only something that we measure, but also something that we can manipulate and something we can control for.
 
 1. Dependent Variable or Outcome, or y-variable.
   - Is a variable that is dependent on an independent variable(s).
@@ -27,3 +27,5 @@ defined, variables are created. Examples of Construct: effort, itchiness, hunger
 
 # Sampling error.
 
+
+![Picture](/Users/irynasoltyska/src/github/udacity-bertelsmann-data-science-challenge-scholarship-2018/intro_to_research_methods_lessons_1_5/sampling_error.png)
