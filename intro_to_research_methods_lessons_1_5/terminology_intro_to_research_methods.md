@@ -28,4 +28,4 @@ All experiments/researches examine some kind of variable(s). A variable is not o
 # Sampling error.
 
 
-![Picture](/Users/irynasoltyska/src/github/udacity-bertelsmann-data-science-challenge-scholarship-2018/intro_to_research_methods_lessons_1_5/sampling_error.png)
+![Picture](/Users/irynasoltyska/src/github/udacity-bertelsmann-data-science-challenge-scholarship-2018/intro_to_research_methods_lessons_1_5/sampling_error.jpg)
