@@ -5,7 +5,7 @@ defined, variables are created. Examples of Construct: effort, itchiness, hunger
 
 
 |Construct      |       Operational definition            |
-   :---:                     :----------:
+   :---:                         :---:
 |`Stress`       |       Level of cortisol (stress hormone) |
 |`Hunger`       |       Gramms of food consumed            |
 |`Effort`       |       Minutes spent studying for an exam |
