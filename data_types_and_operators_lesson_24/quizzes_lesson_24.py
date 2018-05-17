@@ -8,4 +8,12 @@ eclipse_dates = ['June 21, 2001', 'December 4, 2002', 'November 23, 2003',
 # TODO: Modify this line so it prints the last three elements of the list
 print(eclipse_dates[-3:])
 
-# 
+# 24. Quiz: List Methods
+
+names = ["Carol", "Albert", "Ben", "Donna"]
+names.append("Eugenia")
+print(sorted(names))
+
+['Albert', 'Ben', 'Carol', 'Donna', 'Eugenia']
+
+#
