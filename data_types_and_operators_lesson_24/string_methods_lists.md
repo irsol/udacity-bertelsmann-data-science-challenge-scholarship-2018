@@ -12,15 +12,12 @@ Links:
 # Lists!
 
 A list is a sequence of values. The values in a list are called **elements** (sometimes **items**) and elements can be any type of data. For example:
-```python
-random_list = ['Gauda is a cheese?', 32, True ]
 
->>>random_list[-1]
-True
+`random_list = ['Gauda is a cheese?', 32, True]`
 
->>>random_list[0]
-Gauda is a cheese?
-```
+`random_list[-1]`  # True
+
+`random_list[0]`  # Gauda is a cheese?
 
 A list within another list is **nested** list. A list that contains no elements inside is called an **empty** list, for example: []
 Lists are mutable (their content can be modified).
