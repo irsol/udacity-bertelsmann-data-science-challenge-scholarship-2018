@@ -6,7 +6,7 @@
 
 Links:
 
-*[String Methods Documentation](https://docs.python.org/3/library/stdtypes.html#string-methods)
+* [String Methods Documentation](https://docs.python.org/3/library/stdtypes.html#string-methods)
 
 
 
@@ -14,11 +14,11 @@ Links:
 
 A list is a sequence of values. Tge values in a list are called **elements** (sometimes **items**) and elements can be any type of data. For example:
 ```python
-random_list = ['Gauda is a string?', 32, True ]
+random_list = ['Gauda is a cheese?', 32, True ]
 
 >>>random_list[-1]
 True
 
 >>>random_list[0]
-Gauda is a string?
+Gauda is a cheese?
 ```
