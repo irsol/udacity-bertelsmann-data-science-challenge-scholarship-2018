@@ -9,8 +9,6 @@ Links:
 
 * [String Methods Documentation](https://docs.python.org/3/library/stdtypes.html#string-methods)
 
-
-
 # Lists!
 
 A list is a sequence of values. The values in a list are called **elements** (sometimes **items**) and elements can be any type of data. For example:

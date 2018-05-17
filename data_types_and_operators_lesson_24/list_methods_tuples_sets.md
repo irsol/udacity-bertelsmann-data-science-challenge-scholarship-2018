@@ -53,3 +53,33 @@ True #Perenthesis are optional when making tuple.
 ```
 
 # Sets.
+
+A set is an unordered collection of unique elements; any elements appears in a set at most once, there are no **duplicates**. Unordered means that elements are not sorted in any order.
+We can create a set from a list:
+```python
+apples_set = set(apples)
+print(len(apples_set))
+``
+
+Sets support the `in` operator the same as lists do.
+Set operations:
+`add` adds element to a `set`.
+`pop` remove a random element. 
+
+```python 
+fruit = {"apple", "banana", "orange", "grapefruit"}  # define a set
+
+print("watermelon" in fruit)  # check for element
+
+fruit.add("watermelon")  # add an element
+print(fruit)
+
+print(fruit.pop())  # remove a random element
+print(fruit)
+
+Output:
+False
+{'grapefruit', 'orange', 'watermelon', 'banana', 'apple'}
+grapefruit
+{'orange', 'watermelon', 'banana', 'apple'}
+```
