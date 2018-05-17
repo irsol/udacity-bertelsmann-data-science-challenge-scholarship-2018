@@ -38,5 +38,5 @@ Sampling error formula:
 
 
 Links:
-[Samplig error](https://www.britannica.com/science/sampling-error)
-[Estimation of a population](https://www.britannica.com/science/statistics/Estimation-of-a-population-mean#ref367452)
+-[Samplig error](https://www.britannica.com/science/sampling-error)
+-[Estimation of a population](https://www.britannica.com/science/statistics/Estimation-of-a-population-mean#ref367452)
