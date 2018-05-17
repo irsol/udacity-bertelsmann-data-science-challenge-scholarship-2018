@@ -40,6 +40,7 @@ dimensions = 52, 40, 100
 length, width, height = dimensions # tuple unpacking
 print("The dimensions are {} x {} x {}".format(length, width, height))
 ```
+
 ```python
 tuple_a = 1, 2
 tuple_b = (1, 2)
@@ -59,7 +60,7 @@ We can create a set from a list:
 ```python
 apples_set = set(apples)
 print(len(apples_set))
-``
+```
 
 Sets support the `in` operator the same as lists do.
 Set operations:
