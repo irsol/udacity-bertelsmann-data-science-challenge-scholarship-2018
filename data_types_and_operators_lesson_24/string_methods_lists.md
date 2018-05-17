@@ -22,3 +22,15 @@ True
 >>>random_list[0]
 Gauda is a cheese?
 ```
+
+A list within another list is **nested** list. A list that contains no elements inside is called an **empty** list, for example: []
+Lists are mutable (their content can be modified).
+
+# Slicing, in or not in.
+
+Slicing is used to create new lists that have the same values or parts of the values of the originals.
+
+When using slicing, it is important to remember that the lower index is `inclusive` and the upper index is 
+`exclusive`. 
+
+![Membership operators](membership_operators.png)
