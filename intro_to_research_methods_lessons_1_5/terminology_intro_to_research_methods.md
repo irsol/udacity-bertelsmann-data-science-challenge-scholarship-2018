@@ -1,6 +1,6 @@
 # Constructs, Variables, Operational definition.
 
-Construct a variable that is not directly observable or measurable. But once a construct has been operationally 
+**Construct** is a variable that is not directly observable or measurable. But once a construct has been operationally 
 defined, variables are created. Examples of Construct: effort, itchiness, hunger, maturity, wisdom...
 
 
@@ -26,6 +26,23 @@ All experiments/researches examine some kind of variable(s). A variable is not o
 
 # Sample, population.
 
+**Population (or mu)** are values that describe the entire population. 
+A `parameter` is any numerical quantity that characterizes a given population or some aspect of it. This means the parameter tells us something about the whole population. Example of parameters: standard deviation, population mean (average)
+`N` is a population size.
+`mu` is an average (or a mean) of the entire population.
+
+**Sample (or X-bar)** are portions of a population selected for the study. A measurable characteristic of a sample is called a `statistic`.
+`n` is a number of a sample.
+X-bar is an sample average (or a mean)  of the population.
+
+![population vs sample](population_sample.png)
+
+**Random sample** means that each element in the population has an equal chance of being included to the sample. 
+
+**Random selection (or sampling)** is a randomly choosing a sample from a population.
+
+**Convenience selection (or sampling)** selections is based on easy availability/accessibility of elements; doesn't represent entire population
+
 # Sampling error.
 
 **Samplig error** the difference between a population parameter and a sample statistic used to estimate it. Sampling error occurs because a portion, and not the entire population, is surveyed.
@@ -38,6 +55,10 @@ Sampling error formula:
 
 
 Links:
-* [Samplig error](https://www.britannica.com/science/sampling-error)
-* [Estimation of a population](https://www.britannica.com/science/statistics/Estimation-of-a-population-mean#ref367452)
-* [OpenIntro Statistics Second Edition by Christopher D. Barr, David M. Diez, and Mine Çetinkaya-Rundel](https://www.openintro.org/stat/textbook.php?stat_book=os)
+- [Samplig error][1]
+- [Estimation of a population][2]
+- [OpenIntro Statistics Second Edition by Christopher D. Barr, David M. Diez, and Mine Çetinkaya-Rundel][3]
+
+[1]: https://www.britannica.com/science/sampling-error
+[2]: https://www.britannica.com/science/statistics/Estimation-of-a-population-mean#ref367452
+[3]: https://www.openintro.org/stat/textbook.php?stat_book=os
