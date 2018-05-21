@@ -13,6 +13,8 @@ defined, variables are created. Examples of Construct: effort, itchiness, hunger
 **Operational definition** describes how researcher decide to measure the variables (in our case construct) in a study. It also
   helps you to measure constructs in the real world by turning them into measurable variables 
 
+**Hypothesis** is a statementabout the relationship between the variables.
+
 All experiments/researches examine some kind of variable(s). A variable is not only something that we measure, but also something that we can manipulate and something we can control for.
 
 1. Dependent Variable or Outcome, or y-variable.
@@ -51,6 +53,9 @@ Sampling error formula:
 - `mu - X-bar` or `X-bar - mu` where `mu` is a population average and `X-bar` is a sample average
 
 ![sampling_error](sampling_error.png)
+
+
+# Causation and relationship.
 
 
 
