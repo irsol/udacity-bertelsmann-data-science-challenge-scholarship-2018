@@ -60,8 +60,9 @@ Sampling error formula:
 
 # Bias.
 
-Bias - any systematic failure of a sample to represent its population. The most common is called a **simple random bias**. The best way to avoid bias is to select elements for the sample at random. 
-
+Bias - any systematic failure of a sample to represent its population. 
+The most common is called a **simple random bias**. The best way to avoid random bias is to select elements for the sample at random. 
+**Non-response bias** occurs when individuals randomly sampled for a survey fail to respond, cannot respond or decline to participate.
 
 
 Links:
