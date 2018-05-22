@@ -39,11 +39,14 @@ X-bar is an sample average (or a mean)  of the population.
 
 ![population vs sample](population_sample.png)
 
+# Sampling designs.
+
 **Random sample** means that each element in the population has an equal chance of being included to the sample. 
 
 **Random selection (or sampling)** is a randomly choosing a sample from a population.
 
 **Convenience selection (or sampling)** selections is based on easy availability/accessibility of elements; doesn't represent entire population
+
 
 # Sampling error.
 
@@ -55,7 +58,9 @@ Sampling error formula:
 ![sampling_error](sampling_error.png)
 
 
-# Causation and relationship.
+# Bias.
+
+Bias - any systematic failure of a sample to represent its population. The most common is called a **simple random bias**. The best way to avoid bias is to select elements for the sample at random. 
 
 
 
