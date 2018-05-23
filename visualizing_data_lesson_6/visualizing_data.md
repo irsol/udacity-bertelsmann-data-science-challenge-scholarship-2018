@@ -2,7 +2,7 @@
 
 The number of times a certain value appears in a row/set of data is called the **frequency**. Frequency is a better word for number.
 For example, in the following list of numbers, the frequency of the number 3 is 6 (because it occurs 6 times):
-  1, 4, 3, 9, 11, 3, 3, 5, 77, 3, 88, 3, 3
+  `1, 4, 3, 9, 11, 3, 3, 5, 77, 3, 88, 3, 3`
 
 A frequency table is a simple way to display the number of occurrences of a particular value or characteristic.
 
