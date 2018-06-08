@@ -15,3 +15,24 @@ Below is the ERD for the database we will use from Parch & Posey. These diagrams
 4. You can think of each of the boxes below as a spreadsheet.
 ![Parch and Porsey DB](parch_posey_db.png)
 Note: glossy_qty is incorrect, it is actually gloss_qty in the database
+
+# Why SQL?
+
+**SQL** has a variety of functions that allows to read, manipulate and change data. Why **SQL** is so popular for data analyses:
+
+1. **SQL** is easy to understand and learn.
+2. Access data directly.
+3. Easy to audit and copy data.
+4. **SQL** can run queries on multiple tables at once, across large datasets.
+5. You can do: sum, count, max, min..
+6. **SQL** is flexible compare to Google Analytics and Excel.
+
+**NoSQL** stands for not only **SQL**. **NoSQL** envirenments popular for web based data, but less popular for data that lives in spreedsheets.
+
+One of the most popular **NoSQL** database is **MongoDB**. Instead of storing data in tables made out of individual rows, like a relational database does, it stores data in collections made out of individual documents.
+
+## Why Businesses like Databases?
+
+1. Data integrity is ensured - only the data you want entered is entered, and only certain users are able to enter data into the database. 
+2. Data can be accessed quickly - SQL allows you to obtain results very quickly from the data stored in a database. 
+3. Data is easily shared - multiple individuals can access data stored in a database, and the data is the same for all users allowing for consistent results for anyone with access to your database.
