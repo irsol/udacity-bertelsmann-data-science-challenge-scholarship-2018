@@ -6,7 +6,7 @@ For example, in the following list of numbers, the frequency of the number 3 is 
 
 A frequency table is a simple way to display the number of occurrences of a particular value or characteristic.
 
-A frequency distribution is ia table showing each distinct value of some variable and the number of times it occurs in some dataset.
+A frequency distribution is a table showing each distinct value of some variable and the number of times it occurs in some dataset.
 
 Frequency distribution helps us:
 * to analyze the data
