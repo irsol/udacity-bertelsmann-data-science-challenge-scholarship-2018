@@ -117,5 +117,13 @@ This allow you to combine operations where at least one of the combined conditio
 
 ## LIKE
 
-The LIKE operator is exremely useful working with text. Use LIKE within a WHERE clause.
-The LIKE operator is frequently used with %.
+The `LIKE` operator is exremely useful working with text. Use LIKE within a WHERE clause.
+The LIKE operator is frequently used with '%data%'.
+
+## IN
+
+The `IN` operator is useful for working with both numeric and text columns. This operators allows you to use `=` but for more than one item
+of that particular column and all within the same query.
+
+`IN` requaries single quotation marks around **non-numerical data**, **numerical data** can be entered directly.
+
