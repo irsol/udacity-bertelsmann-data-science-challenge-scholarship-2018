@@ -127,3 +127,9 @@ of that particular column and all within the same query.
 
 `IN` requaries single quotation marks around **non-numerical data**, **numerical data** can be entered directly.
 
+## NOT
+
+The `NOT` operator useful for working with the `IN` and `LIKE` operators. By specifying `NOT IN` and `NOT LIKE` we can grab all of the rows
+that don't meet a particular criteria.
+
+`NOT` provides the inverse results for IN, LIKE and similar operators.
