@@ -8,7 +8,7 @@ The SQL laguage has a few different elements, the most basic of which is a state
 
 `SELECT` allows to read data and displays it. Select statements are commonly referred as **queries**. 
 
-## SELECT and FROM.
+## SELECT and FROM
 
 In order to generate the list of all orders, write a SELECT statement. 
 
@@ -36,4 +36,39 @@ Best practice:
 SELECT column
 
 FROM table;
+```
+
+## LIMIT
+
+LIMIT statement is used to retrieve records from one or more tables in a database and limit the number of records returned based on a limit value. 
+
+```
+SELECT *
+FROM table
+LIMIT 10;
+```
+
+## ORDER BY
+
+ORDER BY statement allows to order table by any row. It goes between the FROM and LIMIT clauses. By default ORDER BY goes from `a to z`, lowest to highest or earliest to latest if working with dates. This is referred to as ascending order.
+
+To sort in descending order, add DESC (from biggest to lowest) after the column in ORDER BY statement.
+
+## WHERE
+
+WHERE statement allows to filter a set of results based on specific criteria. WHERE claus goes after FROM but before ORDER BY or LIMIT.
+
+Common symbols used within WHERE statements include:
+```
+> (greater than)
+
+< (less than)
+
+>= (greater than or equal to)
+
+<= (less than or equal to)
+
+= (equal to)
+
+!= (not equal to)
 ```
