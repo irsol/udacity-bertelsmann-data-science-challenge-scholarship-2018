@@ -58,7 +58,7 @@ To sort in descending order, add DESC (from biggest to lowest) after the column 
 
 WHERE statement allows to filter a set of results based on specific criteria. WHERE claus goes after FROM but before ORDER BY or LIMIT.
 
-Common symbols used within WHERE statements include:
+Comparison operators:
 ```
 > (greater than)
 
@@ -72,3 +72,50 @@ Common symbols used within WHERE statements include:
 
 != (not equal to)
 ```
+
+## WHERE with Non-Numerical Data.
+
+Comparison operators can work with non-numerical data as well. If you're using an operator with values that are non-numerical you'll need to put the value in single quotes.
+
+## Arithmetic Operators
+
+**Derived Column** a new column that is a manipulation of the existing columns in your db.
+Can include simple arithmetic or any number of advanced conculations. 
+```
+* (Multiplication)
+
++ (Addition)
+
+- (Subtraction)
+
+/ (Division)
+```
+
+To rename a derived column: add AS to the end of the line that produced the derived column
+and give  then it a name:
+
+```
+glossy_qty + poster_qty AS nonstandard_qty
+```
+
+## Logical Operators
+
+1. LIKE
+This allows you to perform operations similar to using WHERE and =, but for cases when you might not know exactly what you are looking for.
+
+2. IN
+This allows you to perform operations similar to using WHERE and =, but for more than one condition.
+
+3. NOT
+This is used with IN and LIKE to select all of the rows NOT LIKE or NOT IN a certain condition.
+
+4. AND & BETWEEN
+These allow you to combine operations where all combined conditions must be true.
+
+5. OR
+This allow you to combine operations where at least one of the combined conditions must be true.
+
+## LIKE
+
+The LIKE operator is exremely useful working with text. Use LIKE within a WHERE clause.
+The LIKE operator is frequently used with %.
