@@ -42,3 +42,6 @@ One of the most popular **NoSQL** database is **MongoDB**. Instead of storing da
 Data in DB is stored in tables. DB tables can be organized by column, each column must have a `unique name`. All dat in a column must be of the same type (don't mix string, text or numbers). 
 
 Consistent column types are one of the main reasons working with db is fast. 
+
+[Comparison of Relational
+ Database](https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems)
