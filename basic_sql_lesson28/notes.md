@@ -36,3 +36,9 @@ One of the most popular **NoSQL** database is **MongoDB**. Instead of storing da
 1. Data integrity is ensured - only the data you want entered is entered, and only certain users are able to enter data into the database. 
 2. Data can be accessed quickly - SQL allows you to obtain results very quickly from the data stored in a database. 
 3. Data is easily shared - multiple individuals can access data stored in a database, and the data is the same for all users allowing for consistent results for anyone with access to your database.
+
+## How DB store data?
+
+Data in DB is stored in tables. DB tables can be organized by column, each column must have a `unique name`. All dat in a column must be of the same type (don't mix string, text or numbers). 
+
+Consistent column types are one of the main reasons working with db is fast. 
