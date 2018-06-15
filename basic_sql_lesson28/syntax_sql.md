@@ -133,3 +133,14 @@ The `NOT` operator useful for working with the `IN` and `LIKE` operators. By spe
 that don't meet a particular criteria.
 
 `NOT` provides the inverse results for IN, LIKE and similar operators.
+
+## AND and BETWEEN
+The `AND` operator is used within a WHERE statement to consider more than one logical clause at a time. Each time you link a new statement with an AND, you will need to specify the column you are interested in looking at. You may link as many statements as you would like to consider at the same time. This operator works with all of the operations we have seen so far including arithmetic operators (+, *, -, /). LIKE, IN, and NOT logic can also be linked together using the AND operator.
+ The `BETWEEN` operator:
+```
+WHERE column BETWEEN 6 AND 10
+```
+The same as:
+```
+WHERE column >= 6 AND column <= 10
+```
