@@ -118,7 +118,7 @@ This allow you to combine operations where at least one of the combined conditio
 ## LIKE
 
 The `LIKE` operator is exremely useful working with text. Use LIKE within a WHERE clause.
-The LIKE operator is frequently used with '%data%'.
+The LIKE operator is frequently used with '%Example%' or 'S%' or '%s'.
 
 ## IN
 
