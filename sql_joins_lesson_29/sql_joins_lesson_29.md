@@ -37,3 +37,15 @@ JOIN accounts
 ON orders.account_id = accounts.id;
 ```
 This query only pulls two columns, not all the information in these two tables.
+
+## ERD reminder.
+
+ERD or entity relationship diagram is a common way to view data in a database. 
+
+![ERD diagram](entity_relationship_diagram.png)
+The PK here stands for primary key. A primary key exists in every table, and it is a column that has a unique value for every row.
+If you look at the first few rows of any of the tables in our database, you will notice that this first, PK, column is always unique. For this database it is always called id, but that is not true of all databases.
+
+## Primary and Foreign Keys.
+
+![primary and foreign key](primary_foreign_key.png)
