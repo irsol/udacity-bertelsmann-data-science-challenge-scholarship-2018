@@ -18,5 +18,22 @@ There are essentially three ideas that are aimed at database normalization:
 [Why You Need Database Normalization link](http://www.itprotoday.com/microsoft-sql-server/sql-design-why-you-need-database-normalization)
 
 Example:
+Here we are only pulling data from the orders table since in the SELECT statement we only reference columns from the orders table.
+The ON statement holds the two columns that get linked across the two tables.
 
 ![inner join](join_sql.png)
+
+To specify tables and columns in the SELECT statement:
+
+1. The table name is always before the period.
+2. The column you want from that table is always after the period.
+
+For example, if we want to pull only the account name:
+
+```
+SELECT accounts.name, orders.occurred_at
+FROM orders
+JOIN accounts
+ON orders.account_id = accounts.id;
+```
+This query only pulls two columns, not all the information in these two tables.
