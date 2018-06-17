@@ -144,3 +144,8 @@ The same as:
 ```
 WHERE column >= 6 AND column <= 10
 ```
+
+
+## OR
+
+`OR` is a logical operator in SQL that allows to select rows that satisfy either of two conditions. It works similary to `AND` which select the rows that satisfy both of 2 conditions. `OR` works with all the operations including arithmetic operators (+, -, *, /). When combining multiple of these operations, might need to use **parentheses** to assure that the logic you want to perform is being executed correctly.
