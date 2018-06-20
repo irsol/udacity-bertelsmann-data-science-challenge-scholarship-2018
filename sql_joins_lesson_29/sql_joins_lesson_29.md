@@ -96,3 +96,7 @@ Select t1.column1 aliasname, t2.column2 aliasname2
 FROM tablename AS t1
 JOIN tablename2 AS t2
 ``
+
+## 
+
+[Why no many-to-many relationships?](https://stackoverflow.com/questions/7339143/why-no-many-to-many-relationships)
