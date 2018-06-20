@@ -95,8 +95,32 @@ SELECT col1 + col2 total, col3
 Select t1.column1 aliasname, t2.column2 aliasname2
 FROM tablename AS t1
 JOIN tablename2 AS t2
-``
+```
 
-## 
+## Many-to-many relationships 
 
 [Why no many-to-many relationships?](https://stackoverflow.com/questions/7339143/why-no-many-to-many-relationships)
+
+## LEFT and RIGHT JOIN
+
+INNER JOIN will return only rows that appear in **both tables**.
+
+This Inner Join will return only rows at the intersection of these two circles.
+If want to show accounts that don't appear in the orders table we need to use OUTER Join.
+``` 
+SELECT accounts.id, accounts.name, order.total
+FROM orders 
+JOIN accounts
+ON orders.account_id = accounts.id
+```
+
+Venn Diagram is a common way to visualize JOINs. Each circle in the diagram represents a table. The left circle includes all rows of data in the table in  **FROM** clause. The right circle represents all raws of data in the table in **JOIN** clause. The overlapping middle section represents all rows for which the ON clause is **true**.
+![Venn Diagram](venn_diagram.png)
+
+There are three types of joins we might use if we want to include data that doesn't exist in both tables (only in one of the two tables): LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN. 
+
+LEFT JOIN produces a complete set of records from the left table regardless if any of those records have match in the right table. It will also return any results that are in the left table that didn't match.
+
+RIGHT JOIN will return all of the records in the right table regardless if any of those records have a match in the left table. 
+Left and Right joins are somewhat interchangeable:
+![left and right](interchangeable_result.png)
