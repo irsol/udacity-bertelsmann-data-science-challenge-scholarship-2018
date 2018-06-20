@@ -125,4 +125,13 @@ RIGHT JOIN will return all of the records in the right table regardless if any o
 Left and Right joins are somewhat interchangeable:
 ![left and right](interchangeable_result.png)
 
-If there is not matching information in the JOINed table, then you will have columns with empty cells. These empty cells introduce a new data type called NULL. 
+If there is not matching information in the JOINed table, then you will have columns with empty cells. These empty cells introduce a new data type called NULL.
+
+## OUTER JOIN
+
+OUTER JOIN will return the inner join result set, as well as any unmatched rows from either of the two tables being joined.
+
+Again this returns rows that do not match one another from the two tables. The use cases for a full outer join are very rare. 
+[When is a good situation to use a full outer join?](https://stackoverflow.com/questions/2094793/when-is-a-good-situation-to-use-a-full-outer-join)
+
+FULL OUTER JOIN, which is the same as OUTER JOIN. LEFT OUTER JOIN and RIGHT OUTER JOIN the same as LEFT JOIN and RIGHT JOIN. 
