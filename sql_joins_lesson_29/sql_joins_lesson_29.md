@@ -124,3 +124,5 @@ LEFT JOIN produces a complete set of records from the left table regardless if a
 RIGHT JOIN will return all of the records in the right table regardless if any of those records have a match in the left table. 
 Left and Right joins are somewhat interchangeable:
 ![left and right](interchangeable_result.png)
+
+If there is not matching information in the JOINed table, then you will have columns with empty cells. These empty cells introduce a new data type called NULL. 
