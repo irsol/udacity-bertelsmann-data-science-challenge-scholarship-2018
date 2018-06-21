@@ -44,3 +44,12 @@ FROM orders
 JOIN accounts ON orders.account_id = accounts.id
 JOIN sales_reps ON accounts.sales_rep_id = sales_reps.id
 JOIN region ON sales_reps.region_id = region.id;
+
+## JOINs and Filtering. Quiz: Last Check
+
+/*1.*/
+
+/**/
+/**/
+/**/
+/**/

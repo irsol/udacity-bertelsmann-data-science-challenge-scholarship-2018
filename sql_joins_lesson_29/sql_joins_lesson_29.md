@@ -139,3 +139,9 @@ FULL OUTER JOIN, which is the same as OUTER JOIN. LEFT OUTER JOIN and RIGHT OUTE
 ## JOINs and Filtering 
 
 `ON` logic in the on clause reduces the rows **before combining the tables**.
+
+`WHERE` logic in the where clause occurs **after the join occurs**.
+
+ When the database executes the query, it executes the join and everything in the **ON clause first**. Think of this as building the new result set. That result set is then filtered using the WHERE clause.
+
+ INNER JOINs only return the rows for which the two tables match, moving this filter to the ON clause of an inner join will produce the same result as keeping it in the WHERE clause.
