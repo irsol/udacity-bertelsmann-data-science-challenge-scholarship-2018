@@ -134,4 +134,8 @@ OUTER JOIN will return the inner join result set, as well as any unmatched rows 
 Again this returns rows that do not match one another from the two tables. The use cases for a full outer join are very rare. 
 [When is a good situation to use a full outer join?](https://stackoverflow.com/questions/2094793/when-is-a-good-situation-to-use-a-full-outer-join)
 
-FULL OUTER JOIN, which is the same as OUTER JOIN. LEFT OUTER JOIN and RIGHT OUTER JOIN the same as LEFT JOIN and RIGHT JOIN. 
+FULL OUTER JOIN, which is the same as OUTER JOIN. LEFT OUTER JOIN and RIGHT OUTER JOIN the same as LEFT JOIN and RIGHT JOIN.
+
+## JOINs and Filtering 
+
+`ON` logic in the on clause reduces the rows **before combining the tables**.
