@@ -145,5 +145,6 @@ orders.total_amt_usd
 FROM orders 
 JOIN accounts
 ON accounts.id = orders.account_id
-WHERE orders.occurred_at BETWEEN '2015.01.01' and '2016.01.01';
+WHERE orders.occurred_at BETWEEN '01-01-2015' AND '01-01-2016'
+ORDER BY orders.occurred_at DESC;
 
