@@ -122,5 +122,12 @@ JOIN region
 ON sales_reps.region_id = region.id
 WHERE orders.standard_qty = 100 and poster_qty = 50 ORDER BY unit_price DESC;
 
-/*7.*/
+/*7.What are the different channels used by account id 1001? Your final table should have only 2 columns: account name and the different channels. You can try SELECT DISTINCT to narrow
+down the results to only the unique values.*/
 
+SELECT DISTINCT web_events.channel, accounts.name, accounts.id
+FROM web_events 
+JOIN accounts
+ON accounts.id = web_events.account_id
+WHERE accounts.id = 1001
+ORDER BY web_events.channel, accounts.name;
