@@ -67,8 +67,10 @@ SELECT region.name, sales_reps.name AS SalesRepName, accounts.name AS AcountName
 FROM accounts 
 JOIN sales_reps 
 ON accounts.sales_rep_id = sales_reps.id
-JOIN region ON sales_reps.region_id = region.id
-WHERE region.name = '%Midwest%' and sales_reps.name = 'S%';
+JOIN region 
+ON sales_reps.region_id = region.id
+WHERE region.name = 'Midwest' and sales_reps.name LIKE 'S%'
+ORDER BY AcountName;
 
 /*3.Provide a table that provides the region for each sales_rep along with their associated accounts. This time only for accounts where the sales rep has a last name
 starting with K and in the Midwest region. Your final table should include three columns: the region name, the sales rep name, and the account name. Sort the accounts
@@ -78,8 +80,10 @@ SELECT region.name, sales_reps.name AS SalesRepName, accounts.name AS AcountName
 FROM accounts 
 JOIN sales_reps 
 ON accounts.sales_rep_id = sales_reps.id
-JOIN region ON sales_reps.region_id = region.id
-WHERE region.name = '%Midwest%' and sales_reps.name = 'K%';
+JOIN region
+ON sales_reps.region_id = region.id
+WHERE region.name = 'Midwest' and sales_reps.name LIKE '% K%'
+ORDER BY AcountName;
 
 /*4.Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. However, you should
 only provide the results if the standard order quantity exceeds 100. Your final table should have 3 columns: region name, account name, and unit price. In order to avoid a
