@@ -82,7 +82,7 @@ JOIN sales_reps
 ON accounts.sales_rep_id = sales_reps.id
 JOIN region
 ON sales_reps.region_id = region.id
-WHERE region.name = 'Midwest' and sales_reps.name LIKE '% K%'
+WHERE region.name = 'Midwest' AND sales_reps.name LIKE '% K%'
 ORDER BY AcountName;
 
 /*4.Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. However, you should
@@ -97,7 +97,7 @@ JOIN sales_reps
 ON accounts.sales_rep_id = sales_reps.id
 JOIN region 
 ON sales_reps.region_id = region.id
-WHERE orders.standard_qty = 100;
+WHERE orders.standard_qty > 100;
 
 /*5.Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. However, you should only provide
 the results if the standard order quantity exceeds 100 and the poster order quantity exceeds 50. Your final table should have 3 columns: region name, account name, and unit price.
@@ -111,7 +111,8 @@ JOIN sales_reps
 ON accounts.sales_rep_id = sales_reps.id
 JOIN region 
 ON sales_reps.region_id = region.id
-WHERE orders.standard_qty = 100 and poster_qty = 50 ORDER BY unit_price ASC;
+WHERE orders.standard_qty > 100 AND poster_qty > 50
+ORDER BY unit_price ASC;
 
 /*6.Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. However, you should only provide
 the results if the standard order quantity exceeds 100 and the poster order quantity exceeds 50. Your final table should have 3 columns: region name, account name, and unit price.
@@ -125,17 +126,17 @@ JOIN sales_reps
 ON accounts.sales_rep_id = sales_reps.id
 JOIN region 
 ON sales_reps.region_id = region.id
-WHERE orders.standard_qty = 100 and poster_qty = 50 ORDER BY unit_price DESC;
+WHERE orders.standard_qty > 100 AND poster_qty > 50
+ORDER BY unit_price DESC;
 
 /*7.What are the different channels used by account id 1001? Your final table should have only 2 columns: account name and the different channels. You can try SELECT DISTINCT to narrow
 down the results to only the unique values.*/
 
-SELECT DISTINCT web_events.channel, accounts.name, accounts.id
+SELECT DISTINCT web_events.channel, accounts.name
 FROM web_events 
 JOIN accounts
 ON accounts.id = web_events.account_id
-WHERE accounts.id = 1001
-ORDER BY web_events.channel, accounts.name;
+WHERE accounts.id = '1001';
 
 /*8.Find all the orders that occurred in 2015. Your final table should have 4 columns: occurred_at, account name, order total, and order total_amt_usd.*/
 
