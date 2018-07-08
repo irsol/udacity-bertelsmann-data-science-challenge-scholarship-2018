@@ -1,6 +1,6 @@
 # Conditional Statements
 
-#First Example - try changing the value of phone_balance
+# First Example - try changing the value of phone_balance
 phone_balance = 1
 bank_balance = 50
 
@@ -11,7 +11,7 @@ if phone_balance < 10:
 print(phone_balance)
 print(bank_balance)
 
-#Second Example - try changing the value of number
+# Second Example - try changing the value of number
 
 number = 140
 if number % 2 == 0:
@@ -19,7 +19,7 @@ if number % 2 == 0:
 else:
     print("Number " + str(number) + " is odd.")
 
-#Third Example - try to change the value of age
+# Third Example - try to change the value of age
 age = 3
 
 # Here are the age limits for bus fares
