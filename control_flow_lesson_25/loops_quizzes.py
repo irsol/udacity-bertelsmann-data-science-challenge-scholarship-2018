@@ -69,3 +69,18 @@ for item in items:
 html_str = html_str + "</ul>"
 
 print(html_str)
+
+
+# Quiz 5: Lower
+# If you want to create a new list called lower_colors, where each color
+# in colors is lower cased, which code would do this?
+
+colors = ['Red', 'Blue', 'Green', 'Purple']
+lower_colors = []
+
+for color in colors:
+    lower_colors.append(color.lower())
+
+print(lower_colors)
+
+
