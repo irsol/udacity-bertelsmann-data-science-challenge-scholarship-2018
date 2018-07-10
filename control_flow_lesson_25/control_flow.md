@@ -115,9 +115,11 @@ If we use a **non-boolean object** as a condition in an if statement in place of
 
 Here are most of the built-in objects that are considered False in Python:
 
-constants defined to be false: `None` and `False`
-zero of any numeric type: `0`, `0.0`, `0j`, `Decimal(0)`, `Fraction(0, 1)`
-empty sequences and collections: `""`, `()`, `[]`, `{}`, `set()`, `range(0)`
+* constants defined to be false: `None` and `False`
+
+* zero of any numeric type: `0`, `0.0`, `0j`, `Decimal(0)`, `Fraction(0, 1)`
+
+* empty sequences and collections: `""`, `()`, `[]`, `{}`, `set()`, `range(0)`
 
 Example:
 ```
