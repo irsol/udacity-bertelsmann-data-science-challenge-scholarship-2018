@@ -75,18 +75,37 @@ However simple or complex, the condition in an **if** statement must be a boolea
 
 **Don't use**: `if True:` or `if False:`
 
-Bad example
+Bad example:
 ```if True:
     print("This indented code will always get run.")
 ```    
 While `True` is a valid boolean expression, it's not useful as a condition since it always evaluates to True, so the indented code will always get run. Similarly, if `False` is not a condition you should use either - the statement following this `if` statement would never be executed.
 
-**Be careful** writing expression that use **logical operators**: `and`, `or`, `not`.
-Bad example
+
+**Be careful** writing expression that use **logical operators**: `and`, `or`, `not`:
+
+Bad example:
 ```
 if weather == "snow" or "rain":
     print("Wear boots!")
 ```
 This code is valid in Python, but it is not a boolean expression, although it reads like one. The reason is that the expression to the right of the or operator, "rain", is not a boolean expression - it's a string! Later we'll discuss what happens when you use non-boolean-type objects in place of booleans.
 
-**Don't evaluate** the truth of a boolean variable with `==`
+
+**Don't evaluate** the truth of a boolean variable with `== True` or `== False`:
+
+Bad example:
+This comparison isn’t necessary, since the boolean variable itself is a boolean expression.
+```
+if is_cold == True:
+    print("The weather is cold!")
+```
+This is a valid condition, but we can make the code more readable by using the variable itself as the condition instead, as below.
+
+Good example:
+```
+if is_cold:
+    print("The weather is cold!")
+```    
+
+If you want to check whether a boolean is False, you can use the **not** operator.
