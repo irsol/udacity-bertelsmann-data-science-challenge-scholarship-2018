@@ -141,23 +141,28 @@ propulsion = "Propeller"
 ```
 Expressions: 
 
-1. `altitude < 1000 and speed > 100` 
+1.`altitude < 1000 and speed > 100` 
 
-`altitude < 1000` is False, so we don't even need to check the second condition - the whole expression is False.
-
-
-2. ` (propulsion == "Jet" or propulsion == "Turboprop") and speed < 300 and altitude > 20000 `
-
-`propulsion == "Jet"` is False, and `propulsion == "Turboprop"` is False, so the whole expression inside the parentheses is False.
+    `altitude < 1000` is False, so we don't even need to check the second condition - the whole expression
+     is False.
 
 
-3. ` not (speed > 400 and propulsion == "Propeller") `
+2.`(propulsion == "Jet" or propulsion == "Turboprop") and speed < 300 and altitude > 20000 `
 
-To work this one out, we need to look at the inside of the parentheses first, then apply not to that. `speed > 400` is False,
-and because we are using and this makes the whole of the expression inside the parentheses False. Applying not reverses this, so this expression is True.
+    `propulsion == "Jet"` is False, and `propulsion == "Turboprop"` is False, so the whole expression inside
+     the parentheses is False.
+
+
+3.`not (speed > 400 and propulsion == "Propeller") `
+
+     To work this one out, we need to look at the inside of the parentheses first, then apply not to that.
+     `speed > 400` is False, and because we are using and this makes the whole of the expression inside the
+      parentheses False. Applying not reverses this, so this expression is True.
 
 
 
-4. ` (altitude > 500 and speed > 100) or not propulsion == "Propeller" `
+4.`(altitude > 500 and speed > 100) or not propulsion == "Propeller" `
 
-`altitude > 500` is True, and speed is greater than 100, so the expression inside the parenthesis is True. Whatever the value of the other expression, because they are connected by or, the whole expression will evaluate to True.
+     `altitude > 500` is True, and speed is greater than 100, so the expression inside the parenthesis is True.
+     Whatever the value of the other expression, because they are connected by or, the whole expression will
+     evaluate to True.
