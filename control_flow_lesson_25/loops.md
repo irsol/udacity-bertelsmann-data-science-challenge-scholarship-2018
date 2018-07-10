@@ -54,6 +54,8 @@ If you specify one integer inside the parentheses withrange(), it's used as the 
    Or you can specify all three integers for 'start', 'stop', and 'step.'
 * e.g. - `range(1, 10, 2)` returns 1, 3, 5, 7, 9
 
+* e.g. - `range(0, -5)` returns []
+
 ## Creating and Modifying Lists
 You can create a list by appending to a new list at each iteration of the for loop like this:
 
