@@ -66,3 +66,6 @@ elif state == 'NY':
     result = "Since you're from {}, your total cost is {}.".format(state, total_cost)
 
 print(result)
+
+
+# Quiz: Boolean Expressions for Conditions
