@@ -49,3 +49,22 @@ else:
 In Python, indents conventionally come in multiples of four spaces. Be strict about following this convention, because changing the indentation can completely change the meaning of the code.
 
 The [Python Style Guide](https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces) recommends using 4 spaces to indent, rather than using a tab. Whichever you use, be aware that "Python 3 disallows mixing the use of tabs and spaces for indentation."
+
+## Boolean expressions
+
+A **boolean expression** is an expression that is either True or False.
+
+There are tree **logical operatos**: and, or, not. The meaning of these operators is similar to their meaning in English.
+
+**if** statements sometimes use more complicated boolean expressions for their conditions. They may contain multiple comparisons operators, logical operators, and even calculations. Examples:
+
+```
+if 18.5 <= weight / height**2 < 25:
+    print("BMI is considered 'normal'")
+
+if is_raining and is_sunny:
+    print("Is there a rainbow?")
+
+if (not unsubscribed) and (location == "USA" or location == "CAN"):
+    print("send email")
+```
