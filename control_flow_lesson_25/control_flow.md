@@ -54,7 +54,7 @@ The [Python Style Guide](https://www.python.org/dev/peps/pep-0008/#tabs-or-space
 
 A **boolean expression** is an expression that is either True or False.
 
-There are tree **logical operatos**: and, or, not. The meaning of these operators is similar to their meaning in English.
+There are tree **logical operatos**: and, or, not. Use parentheses if you need to make the combinations clear.
 
 **if** statements sometimes use more complicated boolean expressions for their conditions. They may contain multiple comparisons operators, logical operators, and even calculations. Examples:
 
@@ -68,3 +68,18 @@ if is_raining and is_sunny:
 if (not unsubscribed) and (location == "USA" or location == "CAN"):
     print("send email")
 ```
+
+However simple or complex, the condition in an **if** statement must be a boolean expression that evaluates to either True or False and it is this value that decides whether the indented block in an if statement executes or not.
+
+## Good and Bad Examples 
+
+**Don't use**: `if Truee:` or `if False:`
+
+Bad example
+```if True:
+    print("This indented code will always get run.")
+```    
+While `True` is a valid boolean expression, it's not useful as a condition since it always evaluates to True, so the indented code will always get run. Similarly, if `False` is not a condition you should use either - the statement following this `if` statement would never be executed.
+
+**Be careful** writing expression that use **logical operators**: `and`, `or`, `not`.
+**Don't evaluate** the truth of a boolean variable with `==`
