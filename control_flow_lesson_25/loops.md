@@ -22,9 +22,9 @@ los angeles
 Done!
 ```
 
-## range()
+## Built-in function **range()**
 
-The built-in function range() is the right function to iterate over a sequence of numbers. It generates an iterator of arithmetic progressions.
+The built-in function range() is the function to iterate over a sequence of numbers. It generates an iterator of arithmetic progressions.
 
 Example: 
 ```
@@ -32,3 +32,15 @@ Example:
 for x in range(5):
     print(x)
 ```
+
+`range()` is a built-in function used to create an iterable sequence of numbers. You will frequently use `range()` with a `for` loop to repeat an action a certain number of times, as in this example:
+```
+for i in range(3):
+    print("Hello!")
+```
+**range(start=0, stop, step=1)**
+The `range()` function takes three integer arguments, the first and third of which are optional:
+
+* The 'start' argument is the first number of the sequence. If unspecified, 'start' defaults to 0.
+* The 'stop' argument is 1 more than the last number of the sequence. This argument must be specified.
+* The 'step' argument is the difference between each number in the sequence. If unspecified, 'step' defaults to 1.
