@@ -104,8 +104,7 @@ for key, value in basket_items.items():
         #if the key is in the list of fruits, add the value (number of fruits)
         #to result
         if item == key:
-            result = result + int(value)
-            #print("Fruits: {} and Result: {}".format(key, value))
+            result = result + value
 
 print(result)
 
@@ -131,7 +130,7 @@ for key, value in basket_items.items():
         #if the key is in the list of fruits, add the value (number of fruits) 
         #to result
         if item == key:
-            result = result + int(value)
+            result = result + value
 
 print(result)
 
@@ -149,7 +148,7 @@ for key, value in basket_items.items():
         #if the key is in the list of fruits, add the value (number of fruits)
         #to result
         if item == key:
-            result = result + int(value)
+            result = result + value
 
 print(result)
 
@@ -166,9 +165,9 @@ for key, value in basket_items.items():
         #if the key is in the list of fruits, add the value (number of fruits)
         #to result
         if item == key:
-            result = result + int(value)
+            result = result + value
 
-print(result)
+print("I count {} fruits in the busket".format(result)
 
 
 # Quiz: Fruit Basket - Task 3
