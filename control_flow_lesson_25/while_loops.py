@@ -35,7 +35,6 @@ factorial is.
 Example: If number is 6, your code should compute and print the product of 720:
 """
 
-
 number = 6
 product = number
 
@@ -44,4 +43,21 @@ while number > 1:
     product = product * number
 
 print(product)
+
+
+# 3.Practice: Factorials with For Loops
+# Now use a For Loop to Find the Factorial!
+
+number = 6
+# We'll start with the product equal to the number
+product = number
+
+# Write a for loop that calculates the factorial of our number
+for num in range(number):
+    if num > 1:
+        number = number - 1
+        product = product * number
+
+print(product)
+
 
