@@ -45,6 +45,8 @@ while number > 1:
 print(product)
 
 
+
+
 # 3.Practice: Factorials with For Loops
 # Now use a For Loop to Find the Factorial!
 
@@ -53,11 +55,18 @@ number = 6
 product = number
 
 # Write a for loop that calculates the factorial of our number
-for num in range(number):
+for num in range(1, number):
     if num > 1:
         number = number - 1
         product = product * number
 
 print(product)
+
+# another solution without if statement
+for num in range(1, number):
+    product *= num
+
+print(product)
+
 
 
