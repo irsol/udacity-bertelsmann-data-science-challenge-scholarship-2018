@@ -7,3 +7,4 @@
 Another way to get rid of negative values is to squared each one. It means, to multiply each value by itself.
 
 ![Formula squared devitions](sum_squared_deviation_formula.png)
+The last correct formula is called **SS - sum of squares**.
