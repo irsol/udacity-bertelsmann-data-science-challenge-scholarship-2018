@@ -14,3 +14,13 @@ The last correct formula is called **SS - sum of squares**.
 ![Average squared deviation](avg_squared_deviation.png)
 
 The average score diviation is 291,622,740. There's a special name for this number, it's called the **variance**.
+
+How can we put **variance** in words?
+* Mean of squared deviations. (add all squared deviations and dedvide by n)
+* Sum of squared deviations divided ba n.
+
+### 33. Quiz: Standard Deviation in Words.
+
+What is a way to put the Standard Deviation in words?
+
+* Square root of average quared deviation
