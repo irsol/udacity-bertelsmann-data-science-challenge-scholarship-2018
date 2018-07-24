@@ -27,3 +27,22 @@ FROM orders;
 
 SELECT SUM(standard_amt_usd)/SUM(standard_qty) as unit_price_standard_qty
 FROM orders;
+
+
+# MAX, MIN, AVG
+#
+#
+# 1.When was the earliest order ever placed? You only need to return the date.
+
+SELECT MIN(occurred_at) as earliest_order
+FROM orders;
+
+# 2.Try performing the same query as in question 1 without using an aggregation function. 
+
+SELECT occurred_at as earliest_order
+FROM orders
+ORDER BY occurred_at ASC
+LIMIT 1;
+
+# 3.When did the most recent (latest) web_event occur?
+
