@@ -98,3 +98,15 @@ FROM (SELECT total_amt_usd
 ORDER BY total_amt_usd DESC
 LIMIT 2;
 
+
+
+# GROUP BY
+
+# Which account (by name) placed the earliest order? Your solution should have the account name
+# and the date of the order.
+
+SELECT accounts.name as account_name, 
+	   MIN(orders.occurred_at) as order_date
+FROM orders, accounts
+GROUP BY accounts.name
+ORDER BY accounts.name;
