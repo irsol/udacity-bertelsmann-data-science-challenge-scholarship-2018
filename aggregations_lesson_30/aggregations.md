@@ -46,3 +46,17 @@ If you want to count NULLs as zero, you will need to use SUM and COUNT. However,
 
 #####MEDIAN - Expert Tip
 One quick note that a median might be a more appropriate measure of center for this data, but finding the median happens to be a pretty difficult thing to get using SQL alone — so difficult that finding a median is occasionally asked as an interview question.
+
+## MEDIAN
+
+"Calculates a percentile based on a continuous distribution of the column value in SQL Server. The result is interpolated and might not be equal to any of the specific values in the column."
+
+```
+PERCENTILE_CONT ( numeric_literal )   
+    
+    WITHIN GROUP ( ORDER BY order_by_expression [ ASC | DESC ] )  
+    
+    OVER ( [ <partition_by_clause> ] )
+```
+
+[Median: PERCENTILE_CONT](https://docs.microsoft.com/en-us/sql/t-sql/functions/percentile-cont-transact-sql?view=sql-server-2017)
