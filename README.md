@@ -13,3 +13,4 @@ Notes are sorted by lessons.
 - [Lesson 25](https://github.com/irsol/udacity-bertelsmann-data-science-challenge-scholarship-2018/tree/master/control_flow_lesson_25)
 - [Lesson 28](https://github.com/irsol/udacity-bertelsmann-data-science-challenge-scholarship-2018/tree/master/basic_sql_lesson28)
 - [Lesson 29](https://github.com/irsol/udacity-bertelsmann-data-science-challenge-scholarship-2018/tree/master/sql_joins_lesson_29)
+- [Lesson 30](https://github.com/irsol/udacity-bertelsmann-data-science-challenge-scholarship-2018/tree/master/aggregations_lesson_30)
