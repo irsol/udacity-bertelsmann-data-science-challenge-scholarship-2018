@@ -60,3 +60,33 @@ PERCENTILE_CONT ( numeric_literal )
 ```
 
 [Median: PERCENTILE_CONT](https://docs.microsoft.com/en-us/sql/t-sql/functions/percentile-cont-transact-sql?view=sql-server-2017)
+
+
+## GROUP BY 
+
+`GROUP BY` allows to take the sum of data limited to each account rather than across the enrire dataset.
+
++ **GROUP BY** can be used to aggregate data within subsets of the data. For example, grouping for different accounts, different regions, or different sales representatives.
+
++ The GROUP BY always goes between WHERE and ORDER BY
+
++ ORDER BY works like SORT in spreadsheet software
+
++ Any column in the SELECT statement that is not within an aggregator must be in the GROUP BY clause.
+
+Example:
+
+```
+SELECT account_id,
+	SUM(standard_qty) as standard_sum,
+	SUM(gloss_qty) as gloss_sum,
+	SUM(poster_qty) as poster_sum
+FROM demo.orders
+GROUP BY account_id
+ORDER BY account_id;
+```
+
+##### GROUP BY - Expert Tip
+it is worth noting that SQL evaluates the aggregations before the LIMIT clause. If you don’t group by any columns, you’ll get a 1-row result—no problem there. If you group by a column with enough unique values that it exceeds the LIMIT number, the aggregates will be calculated, and then some rows will simply be omitted from the results.
+
+This is actually a nice way to do things because you know you’re going to get the correct aggregates. If SQL cuts the table down to 100 rows, then performed the aggregations, your results would be substantially different. The above query’s results exceed 100 rows, so it’s a perfect example.
