@@ -106,31 +106,44 @@ LIMIT 2;
 # and the date of the order.
 
 SELECT accounts.name as account_name, 
-	   MIN(orders.occurred_at) as order_date
+	 orders.occurred_at as order_date
+FROM accounts
+JOIN orders
+ON accounts.id = orders.account_id
+ORDER BY accounts.name
+LIMIT 1;
+
+# or
+
+SELECT accounts.name as account_name, 
+       MIN(orders.occurred_at) as order_date
 FROM orders, accounts
 GROUP BY accounts.name
-ORDER BY accounts.name;
-
+ORDER BY accounts.name
+LIMIT 1;
 
 # 2.Find the total sales in usd for each account. You should include two columns - the total sales
 # for each company's orders in usd and the company name.
 
 
 SELECT accounts.name as account_name, 
-	   SUM(orders.total_amt_usd) as total_sales_per_oder
-FROM orders, accounts
-GROUP BY accounts.name
-ORDER BY accounts.name;
+	 SUM(orders.total_amt_usd) as total_sales_per_oder
+FROM orders
+JOIN accounts
+ON accounts.id = orders.account_id
+GROUP BY accounts.name;
 
 # 3.Via what channel did the most recent (latest) web_event occur, which account was associated
 # with this web_event? Your query should return only three values - the date, channel, and account name.
 
-SELECT MAX(occurred_at) as latest_web_events,
-	   accounts.name as account_name, 
+SELECT occurred_at as latest_web_events,
+       accounts.name as account_name, 
        web_events.channel as channel_name
-FROM web_events, accounts
-GROUP BY accounts.name, web_events.channel 
-ORDER BY accounts.name, web_events.channel;
+FROM web_events
+JOIN accounts
+ON web_events.account_id = accounts.id
+ORDER BY web_events.occurred_at DESC
+LIMIT 1;
 
 # 4.Find the total number of times each type of channel from the web_events was used. Your final
 # table should have two columns - the channel and the number of times the channel was used.
@@ -163,3 +176,10 @@ ORDER BY orders.total_amt_usd ASC;
 # 7. Find the number of sales reps in each region. Your final table should have two columns -
 # the region and the number of sales_reps. Order from fewest reps to most reps.
 
+SELECT region.name as region_name, 
+COUNT(*) as number_sales_reps 	   
+FROM region
+JOIN sales_reps
+ON sales_reps.region_id = region.id
+GROUP BY region.name
+ORDER BY number_sales_reps;
