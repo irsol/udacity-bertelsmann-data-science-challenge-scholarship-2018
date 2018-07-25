@@ -90,3 +90,26 @@ ORDER BY account_id;
 it is worth noting that SQL evaluates the aggregations before the LIMIT clause. If you don’t group by any columns, you’ll get a 1-row result—no problem there. If you group by a column with enough unique values that it exceeds the LIMIT number, the aggregates will be calculated, and then some rows will simply be omitted from the results.
 
 This is actually a nice way to do things because you know you’re going to get the correct aggregates. If SQL cuts the table down to 100 rows, then performed the aggregations, your results would be substantially different. The above query’s results exceed 100 rows, so it’s a perfect example.
+
+You can GROUP BY multiple columns at once. This is often useful to aggregate across a number of different segments.
+
+Example:
+```
+SELECT account_id,
+	   channel,
+	   COUNT(id) as events
+FROM demo.web_events_full
+GROUP BY account_id, channel
+ORDER BY account_id, events DESC;
+```
+The order in the `ORDER BY` determines which column is ordered on first.
+You can order `DESC` for any column in `ORDER BY`.
+
+#####GROUP BY - Expert Tips
++ The order of column names in your `GROUP BY` clause doesn’t matter—the results will be the same regardless. If we run the same query and reverse the order in the GROUP BY clause, you can see we get the same results.
+
+
++ As with ORDER BY, you can substitute numbers for column names in the `GROUP BY` clause. It’s generally recommended to do this only when you’re grouping many columns, or if something else is causing the text in the GROUP BY clause to be excessively long.
+
+
++ A reminder here that any column that is not within an aggregation must show up in your GROUP BY statement. If you forget, you will likely get an error.
