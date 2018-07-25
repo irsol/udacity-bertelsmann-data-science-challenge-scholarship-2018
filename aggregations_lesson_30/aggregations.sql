@@ -155,23 +155,24 @@ GROUP BY web_events.channel;
 
 # 5.Who was the primary contact associated with the earliest web_event? 
 
-SELECT MIN(occurred_at) as earliest_web_events,  
-       primary_poc as primary_contact
-FROM web_events, accounts
-GROUP BY accounts.primary_poc;
+SELECT primary_poc 
+FROM web_events
+JOIN accounts
+ON web_events.account_id = accounts.id 
+ORDER BY web_events.occurred_at
+LIMIT 1;
 
 # 6. What was the smallest order placed by each account in terms of
 # total usd. Provide only two columns - the account name and the total usd. Order from smallest
 # dollar amounts to largest.
 
-SELECT total_amt_usd as total_usd,
-	   name as account_name
+SELECT MIN(total_amt_usd) as smallest_order,
+	 accounts.name as account_name
 FROM accounts
 JOIN orders
 ON orders.account_id = accounts.id
-WHERE accounts.id = orders.account_id
-GROUP BY accounts.name, orders.total_amt_usd
-ORDER BY orders.total_amt_usd ASC;
+GROUP BY accounts.name
+ORDER BY smallest_order;
 
 # 7. Find the number of sales reps in each region. Your final table should have two columns -
 # the region and the number of sales_reps. Order from fewest reps to most reps.
