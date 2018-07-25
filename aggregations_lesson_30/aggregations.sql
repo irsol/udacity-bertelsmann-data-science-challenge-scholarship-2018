@@ -102,7 +102,7 @@ LIMIT 2;
 
 # GROUP BY
 
-# Which account (by name) placed the earliest order? Your solution should have the account name
+# 1.Which account (by name) placed the earliest order? Your solution should have the account name
 # and the date of the order.
 
 SELECT accounts.name as account_name, 
@@ -110,3 +110,24 @@ SELECT accounts.name as account_name,
 FROM orders, accounts
 GROUP BY accounts.name
 ORDER BY accounts.name;
+
+
+# 2.Find the total sales in usd for each account. You should include two columns - the total sales
+# for each company's orders in usd and the company name.
+
+
+SELECT accounts.name as account_name, 
+	   SUM(orders.total_amt_usd) as total_sales_per_oder
+FROM orders, accounts
+GROUP BY accounts.name
+ORDER BY accounts.name;
+
+# 3.Via what channel did the most recent (latest) web_event occur, which account was associated
+# with this web_event? Your query should return only three values - the date, channel, and account name.
+
+SELECT MAX(occurred_at) as latest_web_events,
+	   accounts.name as account_name, 
+       web_events.channel as channel_name
+FROM web_events, accounts
+GROUP BY accounts.name, web_events.channel 
+ORDER BY accounts.name, web_events.channel;
