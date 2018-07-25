@@ -131,3 +131,23 @@ SELECT MAX(occurred_at) as latest_web_events,
 FROM web_events, accounts
 GROUP BY accounts.name, web_events.channel 
 ORDER BY accounts.name, web_events.channel;
+
+# 4.Find the total number of times each type of channel from the web_events was used. Your final
+# table should have two columns - the channel and the number of times the channel was used.
+
+SELECT COUNT(occurred_at) as use_web_events,  
+       channel as channel_name
+FROM web_events
+GROUP BY web_events.channel;
+
+# 5.Who was the primary contact associated with the earliest web_event? 
+
+SELECT MIN(occurred_at) as earliest_web_events,  
+       primary_poc as primary_contact
+FROM web_events, accounts
+GROUP BY accounts.primary_poc;
+
+# 6. What was the smallest order placed by each account in terms of
+# total usd. Provide only two columns - the account name and the total usd. Order from smallest
+# dollar amounts to largest.
+
