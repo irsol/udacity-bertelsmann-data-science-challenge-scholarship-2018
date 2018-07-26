@@ -65,7 +65,7 @@ SELECT AVG(standard_qty) as avg_standard,
        AVG(poster_qty) as avg_poster,
        AVG(standard_amt_usd) as avg_standart_usd,
        AVG(gloss_amt_usd) as avg_gloss_usd,
-	   AVG(poster_amt_usd) as avg_poster_usd
+	 AVG(poster_amt_usd) as avg_poster_usd
 FROM orders;
 
 # 6.What is the MEDIAN total_usd
@@ -184,3 +184,33 @@ JOIN sales_reps
 ON sales_reps.region_id = region.id
 GROUP BY region.name
 ORDER BY number_sales_reps;
+
+
+# GROUP BY Part 2
+#
+
+# 1. For each account, determine the average amount of each type of paper they purchased
+# across their orders. Your result should have four columns - one for the account name and one
+# for the average quantity purchased for each of the paper types for each account.
+
+SELECT accounts.name as account_name,
+       AVG(standard_qty) as avg_standard,
+       AVG(gloss_qty) as avg_gloss,
+       AVG(poster_qty) as avg_poster
+FROM accounts
+JOIN orders on accounts.id = orders.account_id
+GROUP BY account_name
+ORDER BY account_name;
+
+# 2. For each account, determine the average amount spent per order on each paper type.
+# Your result should have four columns - one for the account name and one for the average
+# amount spent on each paper type.
+
+SELECT accounts.name as account_name,
+       AVG(standard_amt_usd) as avg_standard,
+       AVG(gloss_amt_usd) as avg_gloss,
+       AVG(poster_amt_usd) as avg_poster
+FROM accounts
+JOIN orders on accounts.id = orders.account_id
+GROUP BY account_name
+ORDER BY account_name;
