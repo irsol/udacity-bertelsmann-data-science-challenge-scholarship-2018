@@ -193,5 +193,3 @@ for key, value in basket_items.items():
         not_fruit_count = not_fruit_count + value
 
 print("There are {} fruits and {} not fruits".format(fruit_count, not_fruit_count))
-
-
