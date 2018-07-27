@@ -168,3 +168,14 @@ Expressions:
      `altitude > 500` is True, and speed is greater than 100, so the expression inside the parenthesis is True.
      Whatever the value of the other expression, because they are connected by or, the whole expression will
      evaluate to True.
+
+
+# Break and Continue:
+
+`for` loops iterate over every element in a sequence.
+`while`  loops iterate until they're stopping condition is met.
+
+`break` lterminates loop (for or while) immediately if it get a break statement.
+
+`continue` terminates one iteration od a `for` or `while` loop.
+
