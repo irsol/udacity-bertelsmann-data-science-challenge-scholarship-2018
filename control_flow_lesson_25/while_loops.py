@@ -69,5 +69,57 @@ for num in range(1, number):
 print(product)
 
 
+# Quiz: Count by
+#
+# 1. Suppose you want to count from some number start_num by another number
+# count_by until you hit a final number end_num. Use break_num as the variable
+# that you'll change each time through the loop.
 
+start_num = 2  # start number
+end_num = 66  # end number that you stop when you hit
+count_by = 3  # some number to count by
+
+break_num = start_num
+while break_num < end_num:
+    break_num = break_num + count_by
+
+print(break_num)
+
+
+# 2. Now in addition, address what would happen if someone gives a start_num
+# that is greater than end_num. If this is the case, set result to "Oops! Looks
+# like your start value is greater than the end value. Please try again."
+# Otherwise, set result to the value of break_num.
+
+start_num = 2  # some start number
+end_num = 22  # some end number that you stop when you hit
+count_by = 3  # some number to count by 
+
+# condition to check that end_num is larger than start_num before looping
+
+if start_num > end_num:
+    result = "Oops! Looks like your start value is greater than the end value. Please try again."
+
+else:
+    break_num = start_num
+    while break_num < end_num:
+        break_num = break_num + count_by
+        result = break_num
+print(result)
+
+
+# 3. Write a while loop that finds the largest square number less than an
+# integerlimit and stores it in a variable nearest_square
+
+limit = 40
+
+count = 1
+nearest_square = 1
+
+while (count + 1) ** 2 < limit:
+    count = count + 1
+    nearest_square = count ** 2
+    #print(nearest_square) # to print all possible nearest square
+
+print(nearest_square)
 
