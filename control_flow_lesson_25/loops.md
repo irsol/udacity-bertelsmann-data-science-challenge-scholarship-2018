@@ -178,4 +178,22 @@ letters, nums = zip(*some_list)
 
 # enumerate
 
-`enumerate()` a built-in function, 
+`enumerate()` a built-in function, returns a list of pairs. The first element of each pair is an index and the second is the sequence's value at that index.
+
+Example:
+
+```
+letters = ['a', 'b', 'c', 'd', 'e']
+for i, letter in enumerate(letters):
+    print(i, letter)
+```
+
+Output: 
+
+```
+0 a
+1 b
+2 c
+3 d
+4 e
+```
