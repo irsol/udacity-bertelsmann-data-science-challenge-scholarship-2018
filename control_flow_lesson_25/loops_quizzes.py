@@ -299,16 +299,13 @@ print(heights)
 # Quiz 4: zip() and enumerate()
 #
 # Quiz: Transpose with Zip
+# Use zip to transpose data from a 4-by-3 matrix to a 3-by-4 matrix
 
+data = ((0, 1, 2), (3, 4, 5), (6, 7, 8), (9, 10, 11))
 
-cast = (("Barney", 72), ("Robin", 68), ("Ted", 72), ("Lily", 66), ("Marshall", 76))
+data_transpose = tuple(zip(*data))
 
-# define names and heights here
-
-names, heights = zip(*cast)
-
-print(names)
-print(heights
+print(data_transpose)
 
 
 # Quiz 5: Quiz: Enumerate
