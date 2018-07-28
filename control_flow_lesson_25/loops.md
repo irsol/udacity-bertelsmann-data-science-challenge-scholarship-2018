@@ -112,6 +112,7 @@ cast = {
 for key, value in cast.items():
     print("Actor: {}    Role: {}".format(key, value))
 ```
+
 The output:
 ```
 Actor: Jerry Seinfeld    Role: Jerry Seinfeld
@@ -150,3 +151,31 @@ Actor: Michael Richards    Role: Cosmo Kramer
 Actor: Jerry Seinfeld    Role: Jerry Seinfeld
 Actor: Julia Louis-Dreyfus    Role: Elaine Benes
 ```
+
+## **zip** and **enumerate**
+
+`zip` is a built-in function, returns an iterator that combines multiple iterables into one sequence of tuples. A tuple is a sequence of values. The values can be any type and they're indexed by integers. Tuples are immutable.
+For example:
+
+`list(zip(['a', 'b', 'c'], [1, 2, 3]))` would output: `[('a', 1), ('b', 2), ('c', 3)]`
+
+Like we did for range() we need to convert it to a list or iterate through it with a loop to see the elements.
+
+You could unpack each tuple in a for loop like this.
+```
+letters = ['a', 'b', 'c']
+nums = [1, 2, 3]
+
+for letter, num in zip(letters, nums):
+    print("{}: {}".format(letter, num))
+```
+
+To unzip a list into tuples using an asterisk:
+```
+some_list = [('a', 1), ('b', 2), ('c', 3)]
+letters, nums = zip(*some_list)
+```
+
+# enumerate
+
+`enumerate()` a built-in function, 
