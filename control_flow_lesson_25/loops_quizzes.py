@@ -193,3 +193,46 @@ for key, value in basket_items.items():
         not_fruit_count = not_fruit_count + value
 
 print("There are {} fruits and {} not fruits".format(fruit_count, not_fruit_count))
+
+# Quiz: Break the String
+#
+# Write a loop with a break statement to create a string, news_ticker, that
+# is exactly 140 characters long. You should create the news ticker by adding
+# headlines from the headlines list, inserting a space in between each headline.
+
+headlines = ["Local Bear Eaten by Man",
+             "Legislature Announces New Laws",
+             "Peasant Discovers Violence Inherent in System",
+             "Cat Rescues Fireman Stuck in Tree",
+             "Brave Knight Runs Away",
+             "Papperbok Review: Totally Triffic"]
+
+news_ticker = ""
+
+headlines = " ".join(headlines)
+
+for letter in headlines:
+    news_ticker = news_ticker + letter
+    if len(news_ticker) == 140:
+        break
+
+print(news_ticker)
+
+# Udacity solution
+
+headlines = ["Local Bear Eaten by Man",
+             "Legislature Announces New Laws",
+             "Peasant Discovers Violence Inherent in System",
+             "Cat Rescues Fireman Stuck in Tree",
+             "Brave Knight Runs Away",
+             "Papperbok Review: Totally Triffic"]
+
+news_ticker = ""
+for headline in headlines:
+    news_ticker += headline + " "
+    if len(news_ticker) >= 140:
+        news_ticker = news_ticker[:140]
+        break
+
+print(news_ticker)
+
