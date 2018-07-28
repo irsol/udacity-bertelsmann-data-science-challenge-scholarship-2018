@@ -236,3 +236,62 @@ for headline in headlines:
 
 print(news_ticker)
 
+
+# Quiz 1: zip() and enumerate()
+#
+# Zip Coordinates
+
+
+x_coord = [23, 53, 2, -12, 95, 103, 14, -5]
+y_coord = [677, 233, 405, 433, 905, 376, 432, 445]
+z_coord = [4, 16, -6, -42, 3, -6, 23, -1]
+labels = ["F", "J", "A", "Q", "Y", "B", "W", "X"]
+
+points = []
+
+for num_x, num_y, num_z, letter in zip(x_coord, y_coord, z_coord, labels):
+    points.append("{}: {}, {}, {}".format(letter, num_x, num_y, num_z))
+
+print(points)
+
+
+# Quiz 2: zip() and enumerate()
+#
+# Zip Lists to a Dictionary
+
+cast_names = ["Barney", "Robin", "Ted", "Lily", "Marshall"]
+cast_heights = [72, 68, 72, 66, 76]
+
+cast = dict(zip(cast_names, cast_heights)) # replace with your code
+
+print(cast)
+
+
+# Quiz 3: unzip
+#
+# Unzip the cast tuple into two names and heights tuples.
+
+
+cast = (("Barney", 72), ("Robin", 68), ("Ted", 72), ("Lily", 66), ("Marshall", 76))
+
+# define names and heights here
+
+names, heights = zip(*cast)
+
+print(names)
+print(heights)
+
+
+# Quiz 4: zip() and enumerate()
+#
+# Quiz: Transpose with Zip
+
+
+cast = (("Barney", 72), ("Robin", 68), ("Ted", 72), ("Lily", 66), ("Marshall", 76))
+
+# define names and heights here
+
+names, heights = zip(*cast)
+
+print(names)
+print(heights)
