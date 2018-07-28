@@ -197,3 +197,50 @@ Output:
 3 d
 4 e
 ```
+
+## List comprehensions
+
+List comprehension is an easy way to define and create lists based on existing lists.
+
+List comprehensions can identify when it receives a string or a tuple and work on it like a list.
+
+You want to separate the letters of the word hand and add the letters as items of a list.
+Example with for loop:
+
+```
+h_letters = []
+
+for letter in 'hand':
+    h_letters.append(letter)
+
+print(h_letters)
+```
+
+List comprehensions:
+
+```
+h_letters = [ letter for letter in 'hand' ]
+print( h_letters)
+```
+**Syntax of List Comprehension**
+`[expression for item in list]` => `letter for letter in 'human'`
+
+
+### Conditionals in List Comprehension
+
+We will create list that uses mathematical operators, integers, and range().
+
+```
+number_list = [ x for x in range(20) if x % 2 == 0]
+print(number_list)
+```
+Output:
+`[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]`
+The list ,number_list, will be populated by the items in range from 0-19 if the item's value is divisible by 2.
+
+`squares = [x**2 for x in range(9) if x % 2 == 0]`
+The code above sets squares equal to the list [0, 4, 16, 36, 64], as x to the power of 2 is only evaluated if x is even.
+
+If you would like to add else, you have to move the conditionals to the beginning of the listcomp, right after the expression, like this.
+`squares = [x**2 if x % 2 == 0 else x + 3 for x in range(9)]`
+List comprehensions are not found in other languages, but are very common in python.
