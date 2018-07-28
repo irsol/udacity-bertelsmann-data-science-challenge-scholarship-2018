@@ -178,7 +178,7 @@ letters, nums = zip(*some_list)
 
 # enumerate
 
-`enumerate()` a built-in function, returns a list of pairs. The first element of each pair is an index and the second is the sequence's value at that index.
+`enumerate()` a built-in function, returns a list of pairs or enumerate object. The first element of each pair is an index and the second is the sequence's value at that index.
 
 Example:
 
