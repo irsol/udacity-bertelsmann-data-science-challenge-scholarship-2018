@@ -323,4 +323,3 @@ for index, height in enumerate(heights):
 
 print(cast)
 
-
