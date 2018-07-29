@@ -35,3 +35,21 @@ The rest of the function is contained in the body, which is where the function d
 3. The body will often include a return statement, which is used to send back an output value from the function to the statement that called the function. A return statement consists of the return keyword followed by an expression that is evaluated to get the output value for the function. If there is no return statement, the function simply returns `None`.
 
 `Print` provides output o the console while `Return` provides the value hat you can store and work with and code later. 
+
+
+## Default Arguments
+
+Default arguments allow functions to use default values when those arguments are omitted.
+
+We can add default arguments in a function to have default values for parameters that are unspecified in a function call.
+
+```
+def cylinder_volume(height, radius=5):
+    pi = 3.14159
+    return height * pi * radius ** 2
+
+cylinder_volume(10)  # radius is default avlue in argument
+cylinder_volume(10, 7)  # pass in arguments by position, overwrite the default value of 5.
+cylinder_volume(height=10, radius=7)  # pass in arguments by name
+```
+
