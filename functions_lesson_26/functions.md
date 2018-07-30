@@ -94,3 +94,54 @@ some_function()
 **Docstring** a type of comment used to explain the purpose of a function and how it should be used.
 Docstring are sussounded by triple quotes. 
   [PEP 257 -- Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
+
+
+## Lambda Expressions
+
+In Python, you can use **lambda expressions** to create anonymous functions. That's a function that don't have a name. They're helpful to create quick functions that aren't really needed later in your code.
+sIf you want to specify multiple arguments in a **lambda function**, include them before the colomn, separate by commas.
+
+```
+def multiply(x, y):
+    return x * y
+``` 
+With a lambda expression:
+
+```
+multiply = lambda x, y: x * y
+```
+
+Both of these functions are used in the same way. In either case, we can call multiply like this:
+`multiply(4, 7)`
+
+**Components of a Lambda Function*
+1. The `lambda` keyword is used to indicate that this is a lambda expression.
+2. Following lambda are one or more arguments for the anonymous function separated by commas, followed by a colon :. Similar to functions, the way the arguments are named in a lambda expression is arbitrary.
+3. Last is an expression that is evaluated and returned in this function.
+
+With this structure, lambda expressions aren’t ideal for complex functions, but can be very useful for short, simple functions.
+
+#### Quiz: Lambda with Map
+`map()` is a higher-order built-in function that takes a function and iterable as inputs, and returns an iterator that applies the function to each element of the iterable. The code below uses map() to find the mean of each list in numbers to create the list averages. Test run it to see what happens.
+
+Rewrite this code to be more concise by replacing the mean function with a lambda expression defined within the call to `map()`.
+
+```
+numbers = [
+              [34, 63, 88, 71, 29],
+              [90, 78, 51, 27, 45],
+              [63, 37, 85, 46, 22],
+              [51, 22, 34, 11, 18]
+           ]
+
+def mean(num_list):
+    return sum(num_list) / len(num_list)
+
+averages = list(map(mean, numbers))
+print(averages)
+```
+
+#### Lambda with Filter
+`filter()` is a higher-order built-in function that takes a function and iterable as inputs and returns an iterator with the elements from the iterable for which the function returns True.
+
+[More about map(), filter()](https://www.programiz.com/python-programming/anonymous-function)
