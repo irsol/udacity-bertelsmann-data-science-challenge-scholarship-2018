@@ -88,3 +88,9 @@ some_function()
 ```
 
 **Scope** is essential to understand how info is passed throughout programms in any languges.
+
+## Documentation
+
+**Docstring** a type of comment used to explain the purpose of a function and how it should be used.
+Docstring are sussounded by triple quotes. 
+  [PEP 257 -- Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
