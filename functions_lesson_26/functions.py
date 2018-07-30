@@ -40,6 +40,16 @@ print("expected result: {}, actual result: {}".format(expected_result2, test2))
 # Quiz: readable_timedelta
 
 def readable_timedelta(days):
+    """
+    Return a string of the number of weeks and days included in days.
+
+    Parameters:
+    days -- number of days to convert (int)
+
+    Returns:
+    string of the number of weeks and days included in days
+    """
+
     week = days // 7
     # % to get the number of days that remain
     day = days % 7
@@ -47,3 +57,11 @@ def readable_timedelta(days):
 
 print(readable_timedelta(6))
 
+# Variable scope 
+
+egg_count = 0
+
+def buy_eggs(count):
+    return count + 12  # purchase a dozen eggs
+
+egg_count = buy_eggs(egg_count)
