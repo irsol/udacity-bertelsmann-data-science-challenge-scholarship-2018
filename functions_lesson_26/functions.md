@@ -53,3 +53,38 @@ cylinder_volume(10, 7)  # pass in arguments by position, overwrite the default v
 cylinder_volume(height=10, radius=7)  # pass in arguments by name
 ```
 
+## Variable scope
+
+**Variable scope** the parts of a program that a variable can be referenced, or used, from.
+If variable is created inside a function, it can only be used within that function. Accessing it outside that function is not possible. 
+
+```
+# This will result in an error
+def some_function():
+    word = "hello"
+
+print(word)
+```
+
+`word` is said to have scope that is only local to each function. This means you can use the same name for different variables that are used in different functions.
+```
+# This works fine
+def some_function():
+    word = "hello"
+
+def another_function():
+    word = "goodbye"
+```
+
+We can define a variable outside the function and it can still be accessed within a function.
+
+```
+word = "hello"
+
+def some_function():
+    print(word)
+
+some_function()
+```
+
+**Scope** is essential to understand how info is passed throughout programms in any languges.
