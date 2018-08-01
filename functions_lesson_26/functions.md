@@ -145,3 +145,38 @@ print(averages)
 `filter()` is a higher-order built-in function that takes a function and iterable as inputs and returns an iterator with the elements from the iterable for which the function returns True.
 
 [More about map(), filter()](https://www.programiz.com/python-programming/anonymous-function)
+
+
+## Iterators and Generators
+
+**Iterables** are objects that can return one of it's elements at a time. List is one of the common iterables. Many of the built-in functions we’ve used so far, like 'enumerate,' return an iterator.
+
+**An iterator** is an object that represents a stream of data. This is different from a list, which is also an iterable, but not an iterator because it is not a stream of data.
+
+**Generators** are a simple way to create iterators using functions. It's not only way to create iterator. You can also define iterators using classes, which you can read more about [here](https://docs.python.org/3/tutorial/classes.html#iterators)
+
+Here is an example of a generator function called my_range, which produces an iterator that is a stream of numbers from 0 to (x - 1).
+```
+def my_range(x):
+    i = 0
+    while i < x:
+        yield i
+        i += 1
+
+# since this returns an iterator, we can convert it to a list or iterate through it in a loop to view 
+# its  contents. For example, this code:
+
+for x in my_range(5):
+    print(x)
+```
+Output:
+```
+0
+1
+2
+3
+4
+```
+
+Notice that instead of using the return keyword, it uses `yield`. This allows the function to return values one at a time, and start where it left off each time it’s called. This `yield` keyword is what differentiates a generator from a typical function.
+
