@@ -214,3 +214,13 @@ FROM accounts
 JOIN orders on accounts.id = orders.account_id
 GROUP BY account_name
 ORDER BY account_name;
+
+
+# 3.
+# 
+
+SELECT web_events.occurred_at as occurrences, sales_reps.name as name, web_events.channel as channel
+FROM sales_reps
+JOIN accounts on sales_reps.id = accounts.sales_rep_id
+JOIN web_events on accounts.id = web_events.account_id
+ORDER BY sales_reps.name;
