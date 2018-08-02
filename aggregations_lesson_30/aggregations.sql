@@ -259,3 +259,56 @@ JOIN region on sales_reps.region_id = region.id
 GROUP BY region.name, web_events.channel
 ORDER BY num_occurences DESC;
 
+
+# DISTINCT
+#
+# 1.Use DISTINCT to test if there are any accounts associated with more than one region.
+
+SELECT DISTINCT id, name
+FROM accounts;
+
+# Solution with JOIN
+
+SELECT a.name AS account_name,r.name AS region_name, COUNT(r.name)
+FROM accounts a
+JOIN sales_reps s
+ON a.sales_rep_id=s.id
+JOIN region r
+ON s.region_id=r.id
+GROUP BY a.name, r.name
+Order by a.name;
+
+# Solution with COUNT and DISTINCT to count unique and all data
+SELECT COUNT(region.id) as all_records, COUNT(DISTINCT region_id) as unique_records
+FROM sales_reps, region;
+
+# Udacity solution
+# If each account was associated with more than one region, the first query should
+# have returned more rows than the second query.
+
+SELECT a.id as "account id", r.id as "region id", 
+a.name as "account name", r.name as "region name"
+FROM accounts a
+JOIN sales_reps s
+ON s.id = a.sales_rep_id
+JOIN region r
+ON r.id = s.region_id;
+
+#and 
+SELECT DISTINCT id, name
+FROM accounts;
+
+# 2. Have any sales reps worked on more than one account?
+
+SELECT DISTINCT id, name
+FROM sales_reps;
+
+# or
+
+SELECT sales_reps.name, COUNT(*) num_accounts,
+sales_reps.id 
+FROM accounts 
+JOIN sales_reps
+ON sales_reps.id = accounts.sales_rep_id
+GROUP BY sales_reps.id, sales_reps.name
+ORDER BY num_accounts;
