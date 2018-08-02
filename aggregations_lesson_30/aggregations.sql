@@ -102,7 +102,8 @@ LIMIT 2;
 
 # GROUP BY
 
-# 1.Which account (by name) placed the earliest order? Your solution should have the account name
+# 1.
+# Which account (by name) placed the earliest order? Your solution should have the account name
 # and the date of the order.
 
 SELECT accounts.name as account_name, 
@@ -122,7 +123,8 @@ GROUP BY accounts.name
 ORDER BY accounts.name
 LIMIT 1;
 
-# 2.Find the total sales in usd for each account. You should include two columns - the total sales
+# 2.
+# Find the total sales in usd for each account. You should include two columns - the total sales
 # for each company's orders in usd and the company name.
 
 
@@ -133,7 +135,8 @@ JOIN accounts
 ON accounts.id = orders.account_id
 GROUP BY accounts.name;
 
-# 3.Via what channel did the most recent (latest) web_event occur, which account was associated
+# 3.
+# Via what channel did the most recent (latest) web_event occur, which account was associated
 # with this web_event? Your query should return only three values - the date, channel, and account name.
 
 SELECT occurred_at as latest_web_events,
@@ -145,7 +148,8 @@ ON web_events.account_id = accounts.id
 ORDER BY web_events.occurred_at DESC
 LIMIT 1;
 
-# 4.Find the total number of times each type of channel from the web_events was used. Your final
+# 4.
+# Find the total number of times each type of channel from the web_events was used. Your final
 # table should have two columns - the channel and the number of times the channel was used.
 
 SELECT COUNT(occurred_at) as use_web_events,  
@@ -162,7 +166,8 @@ ON web_events.account_id = accounts.id
 ORDER BY web_events.occurred_at
 LIMIT 1;
 
-# 6. What was the smallest order placed by each account in terms of
+# 6.
+# What was the smallest order placed by each account in terms of
 # total usd. Provide only two columns - the account name and the total usd. Order from smallest
 # dollar amounts to largest.
 
@@ -174,7 +179,8 @@ ON orders.account_id = accounts.id
 GROUP BY accounts.name
 ORDER BY smallest_order;
 
-# 7. Find the number of sales reps in each region. Your final table should have two columns -
+# 7.
+# Find the number of sales reps in each region. Your final table should have two columns -
 # the region and the number of sales_reps. Order from fewest reps to most reps.
 
 SELECT region.name as region_name, 
@@ -189,7 +195,8 @@ ORDER BY number_sales_reps;
 # GROUP BY Part 2
 #
 
-# 1. For each account, determine the average amount of each type of paper they purchased
+# 1.
+# For each account, determine the average amount of each type of paper they purchased
 # across their orders. Your result should have four columns - one for the account name and one
 # for the average quantity purchased for each of the paper types for each account.
 
@@ -202,7 +209,8 @@ JOIN orders on accounts.id = orders.account_id
 GROUP BY account_name
 ORDER BY account_name;
 
-# 2. For each account, determine the average amount spent per order on each paper type.
+# 2. 
+# For each account, determine the average amount spent per order on each paper type.
 # Your result should have four columns - one for the account name and one for the average
 # amount spent on each paper type.
 
@@ -217,10 +225,29 @@ ORDER BY account_name;
 
 
 # 3.
-# 
+# Determine the number of times a particular channel was used in the web_events table for each sales rep.
+# Your final table should have three columns - the name of the sales rep, the channel, and the number of occurrences.
+# Order your table with the highest number of occurrences first.
+ 
+SELECT sales_reps.name as name, web_events.channel as channel, COUNT(channel) as num_events
 
-SELECT web_events.occurred_at as occurrences, sales_reps.name as name, web_events.channel as channel
 FROM sales_reps
 JOIN accounts on sales_reps.id = accounts.sales_rep_id
 JOIN web_events on accounts.id = web_events.account_id
-ORDER BY sales_reps.name;
+GROUP BY sales_reps.name, web_events.channel
+ORDER BY num_events DESC;
+
+
+# 4. 
+# Determine the number of times a particular channel was used in the web_events table for each region. Your final
+# table should have three columns - the region name, the channel, and the number of occurrences. Order your table
+# with the highest number of occurrences first.
+
+SELECT COUNT(web_events.channel) as num_occurences, region.name as name, web_events.channel as channel
+FROM web_events 
+JOIN accounts on web_events.account_id = accounts.id
+JOIN sales_reps on accounts.sales_rep_id = sales_reps.id 
+JOIN region on sales_reps.region_id = region.id
+GROUP BY region.name, web_events.channel
+ORDER BY num_occurences DESC;
+
