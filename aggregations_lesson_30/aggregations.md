@@ -147,3 +147,27 @@ It’s worth noting that using `DISTINCT`, particularly in aggregations, can slo
 4. `GROUP BY`
 5. `HAVING`
 6. `ORDER BY` 
+
+
+## DATE Functions
+
+GROUPing BY a date column is not usually very useful in SQL, as these columns tend to have transaction data down to a second.
+There are a number of built in SQL functions that are aimed at helping us improve our experience in working with dates.
+
+`DATE_TRUNC` allows you to truncate your date to a particular part of your date-time column. Common trunctions are day, month, and year. Here is a great blog post by Mode Analytics on the power of this function.
+
+`DATE_PART` can be useful for pulling a specific portion of a date, but notice pulling month or day of the week (dow) means that you are no longer keeping the years in order. Rather you are grouping for certain components regardless of which year they belonged in.
+
+You can reference the columns in your select statement in GROUP BY and ORDER BY clauses with numbers that follow the order they appear in the select statement. For example
+
+```
+SELECT standard_qty, COUNT(*)
+
+FROM orders
+
+GROUP BY 1 (this 1 refers to standard_qty since it is the first of the columns included in the select statement)
+
+ORDER BY 1 (this 1 refers to standard_qty since it is the first of the columns included in the select statement)
+```
+
+`DATE_PART('dow')` pulls day of the week andr returns a value from 0 to 6 (0 is Sunday, 6 is Saturday).
