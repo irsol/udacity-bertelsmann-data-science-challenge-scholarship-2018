@@ -206,8 +206,7 @@ SELECT accounts.name as account_name,
        AVG(poster_qty) as avg_poster
 FROM accounts
 JOIN orders on accounts.id = orders.account_id
-GROUP BY account_name
-ORDER BY account_name;
+GROUP BY account_name;
 
 # 2. 
 # For each account, determine the average amount spent per order on each paper type.
@@ -220,8 +219,7 @@ SELECT accounts.name as account_name,
        AVG(poster_amt_usd) as avg_poster
 FROM accounts
 JOIN orders on accounts.id = orders.account_id
-GROUP BY account_name
-ORDER BY account_name;
+GROUP BY account_name;
 
 
 # 3.
@@ -237,6 +235,16 @@ JOIN web_events on accounts.id = web_events.account_id
 GROUP BY sales_reps.name, web_events.channel
 ORDER BY num_events DESC;
 
+# or
+
+SELECT s.name, w.channel, COUNT(*) num_events
+FROM accounts a
+JOIN web_events w
+ON a.id = w.account_id
+JOIN sales_reps s
+ON s.id = a.sales_rep_id
+GROUP BY s.name, w.channel
+ORDER BY num_events DESC;
 
 # 4. 
 # Determine the number of times a particular channel was used in the web_events table for each region. Your final
