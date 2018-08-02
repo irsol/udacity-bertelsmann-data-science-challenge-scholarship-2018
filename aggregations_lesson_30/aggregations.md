@@ -128,3 +128,22 @@ FROM table1;
 
 **DISTINCT - Expert Tip**
 It’s worth noting that using `DISTINCT`, particularly in aggregations, can slow your queries down quite a bit.
+
+
+## HAVING
+**HAVING - Expert Tip**
+
+`HAVING` is the “clean” way to filter a query that has been aggregated, but this is also commonly done using a subquery. Essentially, any time you want to perform a WHERE on an element of your query that was created by an aggregate, you need to use HAVING instead.
+
+**WHERE** subsets the returned data based on a logical condition.
+**WHERE** appears after the FROM, JOIN, ON clauses, but before GROUP BY.
+**HAVING** appears after he GROUP BY clause but before the ORDER BY.
+**HAVING** is leki **WHERE**, but it works on logical statement involving aggregations.
+
+**Query clause order**
+1. `SELECT`
+2. `FROM`s
+3. `WHERE`
+4. `GROUP BY`
+5. `HAVING`
+6. `ORDER BY` 
