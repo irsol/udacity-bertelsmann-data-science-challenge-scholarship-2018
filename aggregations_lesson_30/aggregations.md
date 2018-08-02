@@ -113,3 +113,18 @@ You can order `DESC` for any column in `ORDER BY`.
 
 
 + A reminder here that any column that is not within an aggregation must show up in your GROUP BY statement. If you forget, you will likely get an error.
+
+
+## DISTINCT
+
+If you want to group by some columns but you don't want to include any aggregations you can use `DISTINCT`. 
+
+`DISTINCT` is always used in SELECT statements, and it provides the unique rows for all columns written in the SELECT statement. Therefore, you only use DISTINCT once in any particular SELECT statement.
+
+```
+SELECT DISTINCT column1, DISTINCT column2, DISTINCT column3
+FROM table1;
+```
+
+**DISTINCT - Expert Tip**
+It’s worth noting that using `DISTINCT`, particularly in aggregations, can slow your queries down quite a bit.
