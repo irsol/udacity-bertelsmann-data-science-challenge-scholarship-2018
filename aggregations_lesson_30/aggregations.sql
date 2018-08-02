@@ -298,7 +298,7 @@ ON r.id = s.region_id;
 SELECT DISTINCT id, name
 FROM accounts;
 
-# 2. Have any sales reps worked on more than one account?
+# 2. Have many sales reps worked on more than one account?
 
 SELECT DISTINCT id, name
 FROM sales_reps;
@@ -312,3 +312,75 @@ JOIN sales_reps
 ON sales_reps.id = accounts.sales_rep_id
 GROUP BY sales_reps.id, sales_reps.name
 ORDER BY num_accounts;
+
+
+# HAVING
+# 1.How many of the sales reps have more than 5 accounts that they manage?
+#
+
+SELECT s.id, s.name, COUNT(*) num_accounts
+FROM sales_reps s
+JOIN accounts a on s.id = a.sales_rep_id
+GROUP BY s.id, s.name
+HAVING COUNT(*) > 5
+ORDER BY num_accounts;
+
+# Using SUBQUERY
+
+SELECT COUNT(*) num_reps_above5
+FROM(SELECT s.id, s.name, COUNT(*) num_accounts
+     FROM accounts a
+     JOIN sales_reps s
+     ON s.id = a.sales_rep_id
+     GROUP BY s.id, s.name
+     HAVING COUNT(*) > 5
+     ORDER BY num_accounts) AS Table1;
+
+
+# 2. How many accounts have more than 20 orders?
+SELECT a.id, a.name, COUNT(*) num_orders
+FROM accounts a
+JOIN orders o 
+ON a.id = o.account_id
+GROUP BY a.id, a.name
+HAVING COUNT(*) > 20 
+ORDER BY num_orders;
+
+# 3.
+
+# 4.
+
+# 5. 
+
+# 6. 
+
+# 7. 
+
+# 8. Which accounts used facebook as a channel to contact customers more than 6 times?
+
+SELECT a.id, a.name, w.channel, COUNT(*) count_channel
+FROM accounts a
+JOIN web_events w ON a.id = w.account_id
+GROUP BY a.id, a.name, w.channel
+HAVING COUNT(*) > 6
+ORDER BY count_channel;
+
+# 9. Which account used facebook most as a channel?
+
+SELECT a.id, a.name, w.channel, COUNT(*) channel_use
+FROM accounts a
+JOIN web_events w ON a.id = w.account_id
+WHERE  w.channel = 'facebook'
+GROUP BY a.id, a.name, w.channel
+ORDER BY channel_use DESC
+LIMIT 1;
+
+
+# 10. Which channel was most frequently used by most accounts?
+
+SELECT a.id, a.name, w.channel, COUNT(*) channel_use
+FROM accounts a
+JOIN web_events w ON a.id = w.account_id
+GROUP BY a.id, a.name, w.channel
+ORDER BY channel_use DESC
+LIMIT 10;
