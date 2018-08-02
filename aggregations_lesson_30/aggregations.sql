@@ -346,15 +346,55 @@ GROUP BY a.id, a.name
 HAVING COUNT(*) > 20 
 ORDER BY num_orders;
 
-# 3.
+# 3. Which account has the most orders?
 
-# 4.
+SELECT a.id, a.name, COUNT(*) num_orders
+FROM accounts a
+JOIN orders o
+ON a.id = o.account_id
+GROUP BY a.id, a.name
+ORDER BY num_orders DESC
+LIMIT 1;
 
-# 5. 
+# 4. How many accounts spent more than 30,000 usd total across all orders?
 
-# 6. 
+SELECT a.id, a.name, SUM(o.total_amt_usd) total_spent
+FROM accounts a
+JOIN orders o
+ON a.id = o.account_id
+GROUP BY a.id, a.name
+HAVING SUM(o.total_amt_usd) > 30000
+ORDER BY total_spent;
 
-# 7. 
+# 5. How many accounts spent less than 1,000 usd total across all orders?
+
+SELECT a.id, a.name, SUM(o.total_amt_usd) total_spent
+FROM accounts a
+JOIN orders o
+ON a.id = o.account_id
+GROUP BY a.id, a.name
+HAVING SUM(o.total_amt_usd) < 1000
+ORDER BY total_spent;
+
+# 6. Which account has spent the most with us?
+
+SELECT a.id, a.name, SUM(o.total_amt_usd) total_spent
+FROM accounts a
+JOIN orders o
+ON a.id = o.account_id
+GROUP BY a.id, a.name
+ORDER BY total_spent DESC
+LIMIT 1;
+
+# 7. Which account has spent the least with us?
+
+SELECT a.id, a.name, SUM(o.total_amt_usd) total_spent
+FROM accounts a
+JOIN orders o
+ON a.id = o.account_id
+GROUP BY a.id, a.name
+ORDER BY total_spent
+LIMIT 1;
 
 # 8. Which accounts used facebook as a channel to contact customers more than 6 times?
 
