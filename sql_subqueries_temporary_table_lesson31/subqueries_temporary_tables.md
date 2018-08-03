@@ -82,3 +82,60 @@ GROUP BY 1, 2) sub
 	GROUP BY channel
     ORDER BY 2 DESC;
 ```
+
+## Subquery Formatting
+
+#### Badly formatted queries
+
+```
+SELECT * FROM (SELECT DATE_TRUNC('day',occurred_at) AS day, channel, COUNT(*) as events FROM web_events GROUP BY 1,2 ORDER BY 3 DESC) sub;
+```
+
+This second version, which includes some helpful line breaks, is easier to read than that previous version, but it is still not as easy to read as the queries in the Well Formatted Query section.
+
+```
+SELECT *
+FROM (
+SELECT DATE_TRUNC('day',occurred_at) AS day,
+channel, COUNT(*) as events
+FROM web_events 
+GROUP BY 1,2
+ORDER BY 3 DESC) sub;
+```
+
+#### Well Formatted Query
+
+If we have a GROUP BY, ORDER BY, WHERE, HAVING, or any other statement following our subquery, we would then indent it at the same level as our outer query.
+
+```
+SELECT *
+FROM (SELECT DATE_TRUNC('day',occurred_at) AS day,
+                channel, COUNT(*) as events
+      FROM web_events 
+      GROUP BY 1,2
+      ORDER BY 3 DESC) sub;
+```
+
+The inner query GROUP BY and ORDER BY statements are indented to match the inner table. 
+```
+SELECT *
+FROM (SELECT DATE_TRUNC('day',occurred_at) AS day,
+                channel, COUNT(*) as events
+      FROM web_events 
+      GROUP BY 1,2
+      ORDER BY 3 DESC) sub
+GROUP BY channel
+ORDER BY 2 DESC;
+```
+
+## More on Subqueries
+
+If you are only returning a single value, you might use that value in a logical statement like WHERE, HAVING, or even SELECT - the value could be nested within a CASE statement. Most conditional logic will work with subqueries containing **one-cell results**. BUT `IN` is the only type of conditional logic that will work when the inner query ontains multiple results. 
+
+
+
+**Expert Tip**
+
+Note that you should not include an alias when you write a subquery in a conditional statement. This is because the subquery is treated as an individual value (or set of values in the IN case) rather than as a table.
+
+Also, notice the query here compared a single value. If we returned an entire column IN would need to be used to perform a logical argument. If we are returning an entire table, then we must use an ALIAS for the table, and perform additional logic on the entire table.
