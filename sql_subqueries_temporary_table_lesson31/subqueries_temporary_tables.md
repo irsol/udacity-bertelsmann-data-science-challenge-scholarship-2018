@@ -139,3 +139,63 @@ If you are only returning a single value, you might use that value in a logical 
 Note that you should not include an alias when you write a subquery in a conditional statement. This is because the subquery is treated as an individual value (or set of values in the IN case) rather than as a table.
 
 Also, notice the query here compared a single value. If we returned an entire column IN would need to be used to perform a logical argument. If we are returning an entire table, then we must use an ALIAS for the table, and perform additional logic on the entire table.
+
+### MORE on sub queries
+
+1. Subquery table
+```
+SELECT a.id, a.name, we.channel, COUNT(*) as ct
+FROM accounts a
+JOIN web_events we 
+ON a.id = we.account_id
+GROUP BY a.id, a.name, channel
+ORDER BY a.id;
+```
+
+2. Find the max from all data:
+```
+SELECT MAX(ct)
+
+FROM (SELECT a.id, a.name, we.channel, COUNT(*) as ct
+	FROM accounts a
+	JOIN web_events we 
+	ON a.id = we.account_id
+	GROUP BY a.id, a.name, channel
+	ORDER BY a.id) table1
+```
+
+3. Max for every accounts:
+
+```
+SELECT t1.id, t1.name, MAX(ct)
+FROM (SELECT a.id, a.name, we.channel, COUNT(*) as ct
+	FROM accounts a
+	JOIN web_events we 
+	ON a.id = we.account_id
+	GROUP BY a.id, a.name, channel) t1
+GROUP BY t1.id, t1.name
+ORDER BY t1.id;
+```
+
+4. Final table:
+
+```
+SELECT t3.id, t3.name, t3.channel, t3.ct
+FROM (SELECT a.id, a.name, we.channel, COUNT(*) as ct
+	FROM accounts a
+	JOIN web_events we 
+	ON a.id = we.account_id
+	GROUP BY a.id, a.name, channel) t3
+
+JOIN (SELECT t1.id, t1.name, MAX(ct) max_chan
+FROM (SELECT a.id, a.name, we.channel, COUNT(*) as ct
+	FROM accounts a
+	JOIN web_events we 
+	ON a.id = we.account_id
+	GROUP BY a.id, a.name, channel) t1
+GROUP BY t1.id, t1.name) t2
+ON t2.id = t3.id AND t2.max_chan = t3.ct
+ORDER BY t3.id, t3.ct;
+```
+
+4. 
