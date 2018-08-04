@@ -198,4 +198,8 @@ ON t2.id = t3.id AND t2.max_chan = t3.ct
 ORDER BY t3.id, t3.ct;
 ```
 
-4. 
+## WITH 
+
+The `WITH` statement is often called a Common Table Expression or CTE. Though these expressions serve the exact same purpose as subqueries, they are more common in practice, as they tend to be cleaner for a future reader to follow the logic.
+
+Subqueries they make queries lengthy and difficult to read. Common Table Expressions or CTEs can help break your query into separate components and the logic will be more easily to read.

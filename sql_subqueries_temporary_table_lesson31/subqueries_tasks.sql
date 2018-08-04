@@ -84,3 +84,66 @@ ORDER BY total_amt_usd DESC;
 # 3. For the name of the account that purchased the most (in total over their lifetime as a customer)
 # standard_qty paper, how many accounts still had more in total purchases? 
 
+SELECT a.name, w.channel, COUNT(w.id)
+FROM accounts a
+JOIN web_events w ON a.id = w.account_id
+GROUP BY 1, 2
+HAVING a.name = (SELECT customer 
+FROM (SELECT a.name AS customer, SUM(o.total_amt_usd) AS total_usd
+FROM accounts a
+JOIN orders o ON a.id = o.account_id
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 1) t1)
+ORDER BY 3 DESC;
+
+# 4. For the customer that spent the most (in total over their lifetime as
+# a customer) total_amt_usd, how many web_events did they have for each channel?
+
+SELECT * 
+FROM (SELECT a.name, w.channel, COUNT(w.channel)
+    FROM web_events w
+      JOIN accounts a ON a.id = w.account_id
+      GROUP BY a.name, w.channel) t1
+JOIN (SELECT a.name, sum(o.total_amt_usd) total_usd
+    FROM accounts a
+      JOIN orders o ON a.id = o.account_id
+      GROUP BY a.name
+      ORDER BY total_usd DESC
+      LIMIT 1) t2
+      ON t1.name = t2.name
+
+
+# 5. What is the lifetime average amount spent in terms
+# of total_amt_usd for the top 10 total spending accounts?
+
+SELECT a.id, a.name, SUM(o.total_amt_usd) total_spent
+FROM orders o
+JOIN accounts a
+ON a.id = o.account_id
+GROUP BY a.id, a.name
+ORDER BY 3 DESC
+LIMIT 10;
+
+# average of 10 amounts
+
+SELECT AVG(total_spent)
+FROM (SELECT a.id, a.name, SUM(o.total_amt_usd) total_spent
+      FROM orders o
+      JOIN accounts a
+      ON a.id = o.account_id
+      GROUP BY a.id, a.name
+      ORDER BY 3 DESC
+       LIMIT 10) temp;
+
+# 6. What is the lifetime average amount spent in terms
+# of total_amt_usd for only the companies that spent more
+# than the average of all orders.
+
+SELECT AVG(avg_amt_usd)
+FROM (SELECT o.account_id, AVG(o.total_amt_usd) as avg_amt_usd
+FROM orders o
+GROUP BY 1
+HAVING AVG(o.total_amt_usd) > 
+(SELECT AVG(total_amt_usd)
+FROM orders)) temp_table;
