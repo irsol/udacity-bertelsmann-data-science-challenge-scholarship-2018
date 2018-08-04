@@ -203,3 +203,6 @@ ORDER BY t3.id, t3.ct;
 The `WITH` statement is often called a Common Table Expression or CTE. Though these expressions serve the exact same purpose as subqueries, they are more common in practice, as they tend to be cleaner for a future reader to follow the logic.
 
 Subqueries they make queries lengthy and difficult to read. Common Table Expressions or CTEs can help break your query into separate components and the logic will be more easily to read.
+
+* When creating multiple ables using `WITH` add a comma after every table except the last table leading to final query.
+* The new table name  always aliased using `table_name AS`, which is followed by your nasted between parentheses.
