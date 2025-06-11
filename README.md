@@ -1,6 +1,6 @@
 ## About
 
-##### This repository for my study notes, exercises, quizzes during Udacity Bertelsmann Scholarship Challenge 2018.
+##### This repository is for my study notes, exercises, and quizzes during the Udacity Bertelsmann Scholarship Challenge.
  
 Notes are sorted by lessons.
 
